@@ -1,0 +1,19 @@
+{
+  "game": {
+    "title": "Trivia Test",
+    "bannerMobile": "",
+    "bannerDesktop": "",
+    "url": "http://play.gaming.moob.club/trivia/?gamehash=3d6c6a107648eb9c78ff379fc9239441",
+    "validPeriod": {
+      "startDate": "2025-01-17 00:00:00",
+      "endDate": "2030-12-24 23:59:59"
+    }
+  },
+  "additionalSection": {
+    "show": true,
+    "title": "Sabores Venezolanos",
+    "wp-category-slug": "sabores-venezolanos",
+    "wp-category-id": 39
+  },
+  "validatorActive": false
+}

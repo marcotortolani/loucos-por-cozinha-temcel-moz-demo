@@ -1,0 +1,24 @@
+.swiper-pagination-bullet-active {
+  background: transparent !important;
+  width: 1rem !important;
+  border-radius: 0.22rem;
+  border: 0.12rem solid white !important;
+}
+
+.swiper-pagination-bullet {
+  background: white;
+  width: 0.6rem;
+  height: 0.6rem;
+  opacity: 1;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+}
+
+.swiper-pagination-bullets {
+  top: 1rem;
+  position: absolute !important;
+  bottom: 0 !important;
+}
