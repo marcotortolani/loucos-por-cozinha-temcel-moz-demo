@@ -21,10 +21,10 @@ export default async function Page() {
           <TitleStyled>Terms and Conditions</TitleStyled>
           <ParagraphStyled>
             This document establishes the terms and conditions that regulate the
-            use of the service called "{dictionary['Mad for Cooking']}"
-            (hereinafter the "Service" or "Entertainment Option") offered by
-            MOOB MEDIA BUSINESS, C.A (the "Provider"), through which users of
-            Empresa Operadora S.A. – (hereinafter the "Operator") may access
+            use of the service called '{dictionary['Mad for Cooking']}'
+            (hereinafter the 'Service' or 'Entertainment Option') offered by
+            MOOB MEDIA BUSINESS, C.A (the 'Provider'), through which users of
+            Empresa Operadora S.A. - (hereinafter the 'Operator') may access
             from their mobile device, Tablet, laptop or PC, content dedicated to
             the culinary world, exclusive recipe videos, drinks, professional
             chefs, cooking tips, editorial notes.
@@ -51,7 +51,8 @@ export default async function Page() {
           <ParagraphStyled>
             By sending the word{' '}
             <span className="font-bold">
-              SUBSCRIBE, or the command communicated for this action, to number 111
+              SUBSCRIBE, or the command communicated for this action, to number
+              111
             </span>
             , the customer will receive an SMS with the link and access
             instructions to the portal, service price, billing frequency and a
@@ -77,8 +78,8 @@ export default async function Page() {
             The Service is provided through daily renewal subscription mode,
             that is, continuously from the activation of the service by the
             user, until the moment they wish to request service deactivation. To
-            unsubscribe, the user must send the word UNSUBSCRIBE to number 111 and will
-            receive a confirmation message.
+            unsubscribe, the user must send the word UNSUBSCRIBE to number 111
+            and will receive a confirmation message.
           </ParagraphStyled>
           <ParagraphStyled>
             It is an essential requirement for using the subscription that the

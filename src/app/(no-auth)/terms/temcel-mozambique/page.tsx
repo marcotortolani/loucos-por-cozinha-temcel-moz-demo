@@ -22,10 +22,10 @@ export default async function Page() {
           <TitleStyled>Terms and Conditions</TitleStyled>
           <ParagraphStyled>
             This document establishes the terms and conditions that regulate the
-            use of the service called "{dictionary['Mad for Cooking']}"
-            (hereinafter the "Service" or "Entertainment Option") offered by
-            MOOB MEDIA BUSINESS, C.A (the "Provider"), through which users of
-            Empresa Operadora S.A. – (hereinafter the "Operator") may access
+            use of the service called '{dictionary['Mad for Cooking']}'
+            (hereinafter the 'Service' or 'Entertainment Option') offered by
+            MOOB MEDIA BUSINESS, C.A (the 'Provider'), through which users of
+            Empresa Operadora S.A. - (hereinafter the 'Operator') may access
             from their mobile device, Tablet, laptop or PC, content dedicated to
             the culinary world, exclusive recipe videos, drinks, professional
             chefs, cooking tips, editorial notes.
