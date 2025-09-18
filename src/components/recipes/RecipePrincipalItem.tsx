@@ -12,7 +12,7 @@ export const RecipePrincipalItem: React.FC<CategoryPrincipalItemProps> = ({
 }) => {
   return (
     <div className="flex flex-col">
-      <Link href={`/recetas/${category.slug}`} prefetch className="w-full">
+      <Link href={`/recipes/${category.slug}`} prefetch className="w-full">
         <div className="relative aspect-square mb-1">
           <Image
             className={`rounded-sm`}
@@ -28,7 +28,7 @@ export const RecipePrincipalItem: React.FC<CategoryPrincipalItemProps> = ({
           />
         </div>
       </Link>
-      <Link href={`/recetas/${category.slug}`} prefetch className="mt-2">
+      <Link href={`/recipes/${category.slug}`} prefetch className="mt-2">
         <div className="text-white text-[10px] font-light md:text-[16px] whitespace-pre-line text-center">
           {category.name}
         </div>

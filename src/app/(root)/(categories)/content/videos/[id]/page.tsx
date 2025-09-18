@@ -1,0 +1,58 @@
+import React from 'react'
+import { getWpCategories, getWpPosts, getWpTags } from '@/lib/api/wp/wp-actions'
+import { notFound } from 'next/navigation'
+import { sanitizeContent } from '@/lib/utils'
+import { VideoItem } from '@/components/video/VideoItem'
+import { SharedAndFavoriteVideoComponent } from '@/components/SharedAndFavoriteVideoComponent'
+import { VideoPostCarousel } from '@/components/video/VideoPostCarousel'
+import { Container } from '@/components/Container'
+import { CATEGORIES } from '@/lib/constants'
+
+import dictionary from '@/dictionary/lang.json'
+
+type PageProps = Promise<{ id: string }>
+
+export default async function Page({ params }: { params: PageProps }) {
+  const { id } = await params
+
+  const data = await getWpPosts({ slug: id })
+  const [wpPost] = data.posts || []
+  const categories = await getWpCategories({ parent: CATEGORIES.recipes })
+  const dataVideos = await getWpPosts({
+    categories: categories.map((cat) => cat.id).join(','),
+    exclude: wpPost.id?.toString(),
+  })
+
+  const videos = dataVideos.posts || []
+  const tags = await getWpTags({ include: wpPost.tags.toString() })
+
+  if (!wpPost) notFound()
+
+  const content = sanitizeContent(wpPost.content?.rendered as string)
+
+  return (
+    <div className="md:pt-4">
+      <div className="flex justify-center mb-4">
+        <VideoItem item={wpPost} />
+      </div>
+      <Container>
+        <div className="flex justify-between items-center">
+          <div className="font-semibold text-white text-xl w-[80%]">
+            {wpPost.title?.rendered}
+          </div>
+          <SharedAndFavoriteVideoComponent item={wpPost} tags={tags} />
+        </div>
+        <div
+          dangerouslySetInnerHTML={{ __html: content }}
+          className="text-white my-2 font-normal text-sm leading-[1.3rem] md:text-[1rem] md:leading-[1.45rem]"
+        ></div>
+        <VideoPostCarousel
+          title={dictionary['You might also be interested in']}
+          items={videos}
+          color="text-white"
+          moreLink="/content/videos"
+        />
+      </Container>
+    </div>
+  )
+}

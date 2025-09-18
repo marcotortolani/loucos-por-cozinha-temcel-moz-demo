@@ -15,7 +15,7 @@ export const RecipeItem: React.FC<CategoryItemProps> = ({ item, category }) => {
   return (
     <div className="flex flex-col">
       <Link
-        href={`/recetas/${category.slug}/${item?.slug}`}
+        href={`/recipes/${category.slug}/${item?.slug}`}
         prefetch
         className="mb-2"
       >
@@ -34,7 +34,7 @@ export const RecipeItem: React.FC<CategoryItemProps> = ({ item, category }) => {
           />
         </div>
       </Link>
-      <Link href={`/recetas/${category.slug}/${item?.slug}`} prefetch>
+      <Link href={`/recipes/${category.slug}/${item?.slug}`} prefetch>
         <div className="text-white text-[11.3px]  md:text-[16px] font-medium  whitespace-pre-line text-left">
           {item?.title?.rendered}
         </div>

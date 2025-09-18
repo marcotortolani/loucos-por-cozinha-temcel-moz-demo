@@ -2,6 +2,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import dictionary from '@/dictionary/lang.json'
+
 type LogoProps = {
   className?: string
 }
@@ -13,7 +15,7 @@ export const Logo: React.FC<LogoProps> = ({ className = 'h-8 w-[200px]' }) => {
         <div className={`relative  ${className}`}>
           <Image
             src="/icons/logo.svg"
-            alt="logo-lxc"
+            alt={`Logo image - ${dictionary['Mad for Cooking']}`}
             fill
             style={{
               objectFit: 'contain',

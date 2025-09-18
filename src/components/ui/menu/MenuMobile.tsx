@@ -28,6 +28,8 @@ type MenuMobileProps = {
 const ICON_WIDTH = 28
 const ICON_HEIGHT = 28
 
+import dictionary from '@/dictionary/lang.json'
+
 const MenuMobile: React.FC<MenuMobileProps> = ({
   menuClassName = 'bg-black',
   menuItemClassName = 'text-white',
@@ -42,29 +44,29 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
   const currentPath = usePathname() ?? '/'
   const items: MenuItem[] = [
     {
-      title: 'Videos',
+      title: dictionary['Shorts'],
       href: '/shorts',
       Icon: ShortIcon,
     },
     {
-      title: 'Search',
+      title: dictionary['Search'],
       Icon: SearchIcon,
-      href: '/busqueda',
+      href: '/search',
     },
     {
-      title: 'Home',
+      title: dictionary['Home'],
       href: '/',
       Icon: HomeIcon,
     },
 
     {
-      title: 'Contenido',
-      href: '/contenido',
+      title: dictionary['Content'],
+      href: '/content',
       Icon: BookIcon,
     },
     {
-      title: 'Favorite',
-      href: '/favoritos',
+      title: dictionary['Favorites'],
+      href: '/favorites',
       Icon: FavoriteIcon,
     },
   ]

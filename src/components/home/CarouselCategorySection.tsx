@@ -8,6 +8,8 @@ import { Category } from '@/lib/api/wp/wp-types'
 import { CarouselCategorySectionItem } from '@/components/home/CarouselCategorySectionItem'
 import { SectionTitle } from '@/components/text/SectionTitle'
 
+import dictionary from '@/dictionary/lang.json'
+
 type CarouselCategorySectionProps = {
   title?: string
   moreLink?: string
@@ -28,7 +30,7 @@ export const CarouselCategorySection: React.FC<
           href={moreLink}
           className="text-white text-xs  md:text-[16px] font-normal flex items-center"
         >
-          Ver más <ChevronRight size={20} className="ml-1" />
+          {dictionary['View more']} <ChevronRight size={20} className="ml-1" />
         </Link>
       </div>
 

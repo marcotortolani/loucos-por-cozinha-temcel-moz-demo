@@ -12,6 +12,8 @@ import bannerDesktop from '/public/images/banner-trivia-lxc-desktop.webp'
 
 const IS_TEST = process.env.NEXT_PUBLIC_OPERATOR_COUNTRY === 'test'
 
+import dictionary from '@/dictionary/lang.json'
+
 export function BannerGame() {
   const router = useRouter()
   const { userEnabled, userID } = useContext(ValidationContext)
@@ -71,12 +73,12 @@ export function BannerGame() {
       return
     }
     if (!userEnabled) {
-      router.push('/suscribirme')
+      router.push('/subscribe')
       return
     }
     if (!userHash) {
       console.log('No userHash')
-      setPopupMessage('Usuario no válido o sin suscripción')
+      setPopupMessage(dictionary['Invalid user or subscription'])
       return
     }
 

@@ -5,12 +5,11 @@ import 'swiper/css/effect-fade'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import './globals.css'
-import React from 'react'
 import { ValidationProvider } from '@/providers/validation-provider'
 import { AdditionalConfigProvider } from '@/providers/additional-config-provider'
 import { Toaster } from '@/components/ui/toaster'
 
-//import dictionary from '../dictionary/lang.json'
+import dictionary from '../dictionary/lang.json'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -19,7 +18,7 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Loco por la cocina | Cocinar nunca fue tan facil',
+  title: dictionary['title'],
   description: '',
   icons: '/favicon.ico',
   other: {
@@ -33,7 +32,7 @@ export default async function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es">
+    <html lang={dictionary['lang']}>
       <body className={`${poppins.className} bg-[#252525]`}>
         <AdditionalConfigProvider>
           <ValidationProvider>{children}</ValidationProvider>

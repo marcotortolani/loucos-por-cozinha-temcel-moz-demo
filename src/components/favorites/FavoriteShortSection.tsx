@@ -6,6 +6,8 @@ import { ChevronRight } from 'lucide-react'
 import { SectionTitle } from '@/components/text/SectionTitle'
 import { FavoriteShortSectionItem } from '@/components/favorites/FavoriteShortSectionItem'
 
+import dictionary from '@/dictionary/lang.json'
+
 type FavoriteShortSectionProps = {
   title?: string
   moreLink?: string
@@ -30,7 +32,8 @@ export const FavoriteShortSection: React.FC<FavoriteShortSectionProps> = ({
             href={moreLink}
             className="text-white text-xs  font-normal md:text-[16px] flex items-center"
           >
-            Ver más <ChevronRight size={20} className="ml-1" />
+            {dictionary['View more']}{' '}
+            <ChevronRight size={20} className="ml-1" />
           </Link>
         )}
       </div>
@@ -43,7 +46,7 @@ export const FavoriteShortSection: React.FC<FavoriteShortSectionProps> = ({
         </div>
       ) : (
         <div className="text-black text-center bg-[#666666] py-4 rounded-xl ">
-          No tienes shorts disponible
+          {dictionary["You don't have any content"]}
         </div>
       )}
     </div>

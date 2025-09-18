@@ -1,80 +1,86 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'motion/react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 
-import { useAdditionalComponentsStore } from '@/lib/modules/additional-components/additional-components-store'
-import { getWpCategories } from '@/lib/api/wp/wp-actions'
+// import { useAdditionalComponentsStore } from '@/lib/modules/additional-components/additional-components-store'
+// import { getWpCategories } from '@/lib/api/wp/wp-actions'
+
+import dictionary from '@/dictionary/lang.json'
 
 const ITEMS = [
   {
-    title: 'Contenido Editorial',
-    subtitle:
-      'Explorar el arte de la cocina a través de \n historias y recetas.',
-    buttonText: 'Ver notas',
+    title: dictionary['Editorial content'],
+    subtitle: dictionary['editorial_subtitle'],
+    buttonText: dictionary['View articles'],
     image: '/images/editoriales-bg.webp',
-    path: '/contenido/editorial',
+    path: '/content/editorial',
   },
   {
-    title: 'Nuestros cocineros',
-    subtitle:
-      'Cocina como un profesional con las recetas \n de nuestros chefs.',
-    buttonText: 'Ver cocineros',
+    title: dictionary['Our chefs'],
+    subtitle: dictionary['chefs_subtitle'],
+    buttonText: dictionary['View chefs'],
     image: '/images/cocineros-bg.webp',
     path: '/chefs',
   },
   {
-    title: 'Video recetas',
-    subtitle: 'Cocina paso a paso con nuestros videos.',
-    buttonText: 'Ver videos',
+    title: dictionary['Video recipes'],
+    subtitle: dictionary['recipes_subtitle'],
+    buttonText: dictionary['View videos'],
     image: '/images/videorecetas-bg.webp',
-    path: '/recetas',
+    path: '/recipes',
   },
   {
-    title: 'Loco Tips',
-    subtitle:
-      'Aprende los secretos de los chefs y cocina \n como un profesional.',
-    buttonText: 'Ver contenido',
+    title: dictionary['Mad Tips'],
+    subtitle: dictionary['madtips_subtitle'],
+    buttonText: dictionary['View content'],
     image: '/images/locotips-bg.webp',
-    path: '/loco-tips',
+    path: '/mad-tips',
+  },
+  {
+    title: dictionary['Local Flavors'],
+    subtitle: dictionary['Special content'],
+    buttonText: dictionary['View content'],
+    image: '/images/banner-local-flavors.webp',
+    path: '/local-flavors',
   },
   // {
-  //   title: '¿Qué cocino?',
-  //   subtitle:
-  //     '!Chef Virtual viene a resolverte el problema! \n Te generamos una receta 100% personalizable.',
-  //   buttonText: '!Cocinar ahora!',
+  //   title: dictionary["What should I cook?"],
+  //   subtitle: dictionary["cooking_subtitle"],
+  //   buttonText: dictionary["Cook now!"],
   //   image: QueCocino,
   //   path: '/',
   // },
 ]
 
 export const CarouselHome = () => {
-  const { additionalConfig } = useAdditionalComponentsStore()
-  const { additionalSection } = additionalConfig
+  // const { additionalConfig } = useAdditionalComponentsStore()
+  // const { additionalSection } = additionalConfig
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [sliderItems, setSliderItems] = useState(ITEMS)
+  // const [sliderItems, setSliderItems] = useState(ITEMS)
 
-  useEffect(() => {
-    if (!additionalSection?.show) return
+  // useEffect(() => {
+  //   if (!additionalSection?.show) return
 
-    getWpCategories({
-      include: additionalSection['wp-category-id'].toString(),
-    }).then((res) => {
-      if (res) {
-        const newItem = {
-          title: additionalSection?.title || '',
-          subtitle: res?.[0]?.description || 'Contenido especial',
-          buttonText: 'Ver contenido',
-          image: res[0]?.image || '',
-          path: `/${additionalSection?.['wp-category-slug']}`,
-        }
-        setSliderItems([newItem, ...sliderItems])
-      }
-    })
-  }, [additionalSection?.show])
+  //   getWpCategories({
+  //     include: additionalSection['wp-category-id'].toString(),
+  //   }).then((res) => {
+  //     if (res) {
+  //       const newItem = {
+  //         title: additionalSection?.title || '',
+  //         subtitle: res?.[0]?.description || dictionary['Special content'],
+  //         buttonText: dictionary['View content'],
+  //         image: res[0]?.image || '',
+  //         path: `/${additionalSection?.['wp-category-slug']}`,
+  //       }
+  //       setSliderItems([newItem, ...sliderItems])
+  //     }
+
+  //   })
+  // }, [additionalSection?.show])
 
   return (
     <Swiper
@@ -125,7 +131,7 @@ export const CarouselHome = () => {
         },
       }}
     >
-      {sliderItems.map(({ title, subtitle, buttonText, image, path }, i) => (
+      {ITEMS.map(({ title, subtitle, buttonText, image, path }, i) => (
         <SwiperSlide key={i}>
           <div className="relative mx-auto w-full md:w-[95%] aspect-video xl:max-w-4xl cursor-pointer flex flex-col items-center justify-center md:rounded-xl">
             <div className="relative top-0 w-full h-[470px] md:w-[580px] lg:w-full overflow-hidden md:rounded-3xl lg:rounded-4xl ">

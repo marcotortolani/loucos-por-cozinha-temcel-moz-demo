@@ -14,7 +14,7 @@ export const ContentVideoItem: React.FC<ContentVideoItemProps> = ({ item }) => {
 
   return (
     <div>
-      <Link href={`/contenido/videos/${item.slug}`} prefetch>
+      <Link href={`/content/videos/${item.slug}`} prefetch>
         <div className="relative mx-auto h-[183px] w-full  md:h-[300px] lg:h-[350px]  rounded-lg mb-2">
           <Image
             className={`rounded-md`}
@@ -30,7 +30,7 @@ export const ContentVideoItem: React.FC<ContentVideoItemProps> = ({ item }) => {
           />
         </div>
       </Link>
-      <Link href={`/contenido/videos/${item.slug}`} prefetch>
+      <Link href={`/content/videos/${item.slug}`} prefetch>
         <div className="text-white font-medium text-[11.35px] line-clamp-3 md:text-[16px] text-left">
           {item.title?.rendered}
         </div>

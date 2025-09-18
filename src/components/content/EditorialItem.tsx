@@ -19,7 +19,7 @@ export const EditorialItem: React.FC<EditorialItemProps> = ({
 
   return (
     <div>
-      <Link href={`${url || '/contenido/editorial/'}/${item.slug}`} prefetch>
+      <Link href={`${url || '/content/editorial/'}/${item.slug}`} prefetch>
         <div className="relative mx-auto h-[144px] md:h-[300px] lg:h-[350px] md:w-full rounded-sm md:rounded-md lg:rounded-lg mb-2">
           <Image
             className={`rounded-[inherit]`}
@@ -35,7 +35,7 @@ export const EditorialItem: React.FC<EditorialItemProps> = ({
           />
         </div>
       </Link>
-      <Link href={`${url || '/contenido/editorial/'}/${item.slug}`} prefetch>
+      <Link href={`${url || '/content/editorial/'}/${item.slug}`} prefetch>
         <div className="text-white text-[11.3px]  md:text-xl  font-medium line-clamp-3  whitespace-pre-line text-left">
           {item?.title?.rendered}
         </div>

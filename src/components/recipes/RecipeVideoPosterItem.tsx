@@ -18,7 +18,7 @@ export const RecipeVideoPosterItem: React.FC<RecipeVideoPosterItemProps> = ({
   const image = wpImage(item) || Default
   return (
     <div className="flex flex-col">
-      <Link href={`/recetas/${recipe}/${item?.slug}`} prefetch>
+      <Link href={`/recipes/${recipe}/${item?.slug}`} prefetch>
         <div
           className={`relative  md:aspect-square h-[178px] md:h-[300px] lg:h-[350px] w-full flex items-center justify-center`}
         >
@@ -33,7 +33,7 @@ export const RecipeVideoPosterItem: React.FC<RecipeVideoPosterItemProps> = ({
           />
         </div>
       </Link>
-      <Link href={`/recetas/${recipe}/${item?.slug}`} prefetch className="mt-2">
+      <Link href={`/recipes/${recipe}/${item?.slug}`} prefetch className="mt-2">
         <div className="text-white text-[11.3px]  md:text-[16px]  font-medium  whitespace-pre-line text-left">
           {item?.title?.rendered}
         </div>

@@ -8,6 +8,8 @@ import { SectionTitle } from '@/components/text/SectionTitle'
 import { Pagination } from '@/components/pagination/Pagination'
 import { RecipeItem } from '@/components/recipes/RecipeItem'
 
+import dictionary from '@/dictionary/lang.json'
+
 const Loading = dynamic(() => import('@/components/Loading'), {
   ssr: false,
 })
@@ -51,7 +53,7 @@ export const RecipePosts: React.FC<Props> = ({ category }) => {
         </div>
       ) : (
         <div className="text-black text-center bg-[#666666] py-4 rounded-xl ">
-          No tienes contenido disponible
+          {dictionary["You don't have any content"]}
         </div>
       )}
     </div>

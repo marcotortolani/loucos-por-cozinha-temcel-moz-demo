@@ -9,70 +9,77 @@ import {
 } from '@/components/ui/navigation-menu'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { MenuIcon } from 'lucide-react'
+import { MenuIcon, Search, Heart } from 'lucide-react'
+
 import React from 'react'
 import { RouteItem } from '@/lib/route/route-types'
 import { useLayoutSidebarStore } from '@/components/layout/layout-store'
 
-import { Search, Heart } from 'lucide-react'
-import { useAdditionalComponentsStore } from '@/lib/modules/additional-components/additional-components-store'
+// import { useAdditionalComponentsStore } from '@/lib/modules/additional-components/additional-components-store'
+
+import dictionary from '@/dictionary/lang.json'
 
 const Header: React.FC = () => {
   const { openDialog } = useLayoutSidebarStore()
   const { userEnabled, userID } = useContext(ValidationContext)
 
-  const { additionalConfig } = useAdditionalComponentsStore()
-  const { additionalSection } = additionalConfig
+  // const { additionalConfig } = useAdditionalComponentsStore()
+  // const { additionalSection } = additionalConfig
 
   const ROUTES: RouteItem[] = [
     {
-      title: 'Inicio',
+      title: dictionary['Home'],
       href: '/',
     },
     {
-      title: 'Recetas',
-      href: '/recetas',
+      title: dictionary['Local Flavors'],
+      href: '/local-flavors',
     },
     {
-      title: 'Nuestros Chefs',
+      title: dictionary['Recipes'],
+      href: '/recipes',
+    },
+    {
+      title: dictionary['Our chefs'],
       href: '/chefs',
     },
     {
-      title: 'Contenido',
-      href: '/contenido',
+      title: dictionary['Content'],
+      href: '/content',
     },
     {
-      title: 'Loco tips',
-      href: '/loco-tips',
+      title: dictionary['Mad Tips'],
+      href: '/mad-tips',
     },
     {
-      title: 'Suscribite',
-      href: '/suscribirme',
+      title: dictionary['Subscribe'],
+      href: '/subscribe',
     },
     {
       Icon: Heart,
-      href: '/favoritos',
+      href: '/favorites',
     },
     {
       Icon: Search,
-      href: '/busqueda',
+      href: '/search',
     },
   ]
 
   if (userEnabled && userID) {
-    const index = ROUTES.findIndex((item) => item.href === '/suscribirme')
+    const index = ROUTES.findIndex((item) => item.href === '/subscribe')
 
     if (index !== -1) {
       ROUTES.splice(index, 1)
     }
   }
 
-  if (additionalSection && additionalSection?.show) {
-    ROUTES.splice(2, 0, {
-      title: additionalSection.title,
-      href: `/${additionalSection['wp-category-slug']}`,
-    })
-  }
+  // if (additionalSection && additionalSection?.show) {
+  //   ROUTES.splice(2, 0, {
+  //     title: additionalSection.title,
+  //     href: `/${additionalSection['wp-category-slug']}`,
+  //   })
+  // }
+
   return (
     <header className="fixed z-[50] flex h-20 w-full items-center justify-between bg-black px-4 md:px-6 lg:px-8">
       <Logo />
@@ -87,8 +94,7 @@ const Header: React.FC = () => {
               >
                 <Link
                   href={href || '#'}
-                  // className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-black lg:px-2 xl:px-4 py-2 text-sm font-medium text-white hover:bg-primary transition-all duration-150 ease-in-out"
-                  className={`${href === '/suscribirme' ? ' bg-primary text-black hover:bg-primary/80 ' : ' text-white bg-black hover:text-black hover:bg-primary '} group inline-flex h-9 w-max items-center justify-center rounded-md px-2 xl:px-4 py-2 text-sm font-medium `}
+                  className={`${href === '/subscribe' ? ' bg-primary text-black hover:bg-primary/80 ' : ' text-white bg-black hover:text-black hover:bg-primary '} group inline-flex h-9 w-max items-center justify-center rounded-md px-2 xl:px-4 py-2 text-sm font-medium `}
                   prefetch
                 >
                   {Icon ? <Icon /> : null}

@@ -9,66 +9,66 @@ import { MenuFooter } from '@/components/layout/MenuFooter'
 import { RouteItem } from '@/lib/route/route-types'
 
 import { useLayoutSidebarStore } from './layout-store'
-import { useAdditionalComponentsStore } from '@/lib/modules/additional-components/additional-components-store'
+//import { useAdditionalComponentsStore } from '@/lib/modules/additional-components/additional-components-store'
+
+import dictionary from '@/dictionary/lang.json'
 
 export default function SidebarMenu(): React.ReactNode {
   const pathname = usePathname()
   const { open, closeDialog } = useLayoutSidebarStore()
   const { userEnabled, userID } = useContext(ValidationContext)
-  const { additionalConfig } = useAdditionalComponentsStore()
-  const { additionalSection } = additionalConfig
+  // const { additionalConfig } = useAdditionalComponentsStore()
+  // const { additionalSection } = additionalConfig
   const MOBILE_ROUTES: RouteItem[] = [
     {
-      title: 'Inicio',
+      title: dictionary['Home'],
       href: '/',
     },
     {
-      title: 'Recetas',
-      href: '/recetas',
+      title: dictionary['Recipes'],
+      href: '/recipes',
     },
     {
-      title: 'Nuestros Chefs',
+      title: dictionary['Our chefs'],
       href: '/chefs',
     },
     {
-      title: 'Contenido',
-      href: '/contenido',
+      title: dictionary['Content'],
+      href: '/content',
     },
 
     {
-      title: 'Loco tips',
-      href: '/loco-tips',
+      title: dictionary['Mad Tips'],
+      href: '/mad-tips',
     },
     {
-      href: '/favoritos',
-      title: 'Favoritos',
+      title: dictionary['Favorites'],
+      href: '/favorites',
     },
     {
-      href: '/busqueda',
-      title: 'Búsqueda',
+      title: dictionary['Search'],
+      href: '/search',
     },
     {
-      href: '/suscribirme',
-      title: 'Suscribite',
+      title: dictionary['Subscribe'],
+      href: '/subscribe',
     },
   ]
 
   if (userEnabled && userID) {
-    const index = MOBILE_ROUTES.findIndex(
-      (item) => item.href === '/suscribirme',
-    )
+    const index = MOBILE_ROUTES.findIndex((item) => item.href === '/subscribe')
 
     if (index !== -1) {
       MOBILE_ROUTES.splice(index, 1)
     }
   }
 
-  if (additionalSection && additionalSection?.show) {
-    MOBILE_ROUTES.splice(2, 0, {
-      title: additionalSection.title,
-      href: `/${additionalSection['wp-category-slug']}`,
-    })
-  }
+  // if (additionalSection && additionalSection?.show) {
+  //   MOBILE_ROUTES.splice(2, 0, {
+  //     title: additionalSection.title,
+  //     href: `/${additionalSection['wp-category-slug']}`,
+  //   })
+  // }
 
   useEffect(() => {
     closeDialog()

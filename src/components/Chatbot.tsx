@@ -5,6 +5,8 @@ import { motion } from 'motion/react'
 import { usePathname } from 'next/navigation'
 import { ChatBotIcon } from '@/components/icons'
 
+import dictionary from '@/dictionary/lang.json'
+
 const URL_CHATBOT = process.env.NEXT_PUBLIC_URL_CHATBOT
 
 export const Chatbot = () => {
@@ -65,7 +67,7 @@ export const Chatbot = () => {
           onClick={() => setChatOpen(!chatOpen)}
           className=" hidden lg:flex px-4 lg:px-8 py-4 shadow-black shadow-md text-nowrap text-lg lg:text-lg xl:text-xl text-White bg-primary rounded-full "
         >
-          ¡Hablá con nuestro asistente online!
+          {dictionary['Chat with our online assistant!']}
         </button>
       </div>
     </div>

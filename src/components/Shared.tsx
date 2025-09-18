@@ -23,6 +23,8 @@ import {
 } from '@/components/icons'
 import { HASH_TAG } from '@/lib/constants'
 
+import dictionary from '@/dictionary/lang.json'
+
 type SharedProps = {
   item?: Post
   tags?: Tag[]
@@ -64,13 +66,13 @@ export const Shared: React.FC<SharedProps> = ({ item, tags }) => {
           </TwitterShareButton>
           <WhatsappShareButton
             url={url}
-            title={`Mirá este contenido de Locos por la cocina: ${title}`}
+            title={`${dictionary['Check out this content from']} ${dictionary['Mad for Cooking']}: ${title}`}
           >
             <WhatsappIcon width={30} height={30} fill="#363636" />
           </WhatsappShareButton>
           <TelegramShareButton
             url={url}
-            title={`Mirá este contenido de Locos por la cocina: ${title}`}
+            title={`${dictionary['Check out this content from']} ${dictionary['Mad for Cooking']}: ${title}`}
           >
             <TelegramIcon width={30} height={30} fill="#363636" />
           </TelegramShareButton>

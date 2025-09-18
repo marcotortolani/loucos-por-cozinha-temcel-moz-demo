@@ -7,6 +7,8 @@ import { SharedAndFavoriteVideoComponent } from '@/components/SharedAndFavoriteV
 import { VideoPostCarousel } from '@/components/video/VideoPostCarousel'
 import { Container } from '@/components/Container'
 
+import dictionary from '@/dictionary/lang.json'
+
 type PageProps = Promise<{ chef: string; post: string }>
 
 export default async function Page({ params }: { params: PageProps }) {
@@ -45,7 +47,7 @@ export default async function Page({ params }: { params: PageProps }) {
           className="text-white my-2 font-normal text-sm leading-[1.3rem] md:text-[1rem] md:leading-[1.45rem]"
         ></div>
         <VideoPostCarousel
-          title="También te podría interesar"
+          title={dictionary['You might also be interested in']}
           items={videos}
           color="text-white"
           moreLink={`/chefs/${chef}`}

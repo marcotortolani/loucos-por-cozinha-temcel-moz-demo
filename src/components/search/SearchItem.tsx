@@ -16,7 +16,7 @@ export const SearchItem: React.FC<SearchItemProps> = ({ item }) => {
 
   return (
     <div>
-      <Link href={`/contenido/${editorialRoute}/${item.slug}`} prefetch>
+      <Link href={`/content/${editorialRoute}/${item.slug}`} prefetch>
         <div className="relative h-[184px] w-full md:h-[300px] rounded-sm mb-1">
           <Image
             className="rounded-sm"
@@ -32,7 +32,7 @@ export const SearchItem: React.FC<SearchItemProps> = ({ item }) => {
           />
         </div>
       </Link>
-      <Link href={`/contenido/${editorialRoute}/${item.slug}`} prefetch>
+      <Link href={`/content/${editorialRoute}/${item.slug}`} prefetch>
         <div className="text-white text-[11px] font-medium md:text-[16px] whitespace-pre-line text-left">
           {item.title?.rendered}
         </div>

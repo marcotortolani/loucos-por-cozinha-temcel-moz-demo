@@ -9,9 +9,10 @@ import { CarouselCategorySection } from '@/components/home/CarouselCategorySecti
 import { Container } from '@/components/Container'
 import { ShortCarousel } from '@/components/short/ShortCarousel'
 
-import { AdditionalSection } from '@/components/home/AdditionalSection'
+// import { AdditionalSection } from '@/components/home/AdditionalSection'
 import { BannerGame } from '@/components/home/BannerGame'
-import { BannerCampaign } from '@/components/home/BannerCampaign'
+
+import dictionary from '@/dictionary/lang.json'
 
 export default async function Page() {
   const chefs = await getWpCategories({ parent: 23, per_page: 50 })
@@ -43,35 +44,39 @@ export default async function Page() {
       </div>
 
       <Container>
-        <AdditionalSection />
+        {/* <AdditionalSection /> */}
         <BannerGame />
-        <BannerCampaign />
+
         <Recipes recipes={categories} />
-        <ShortCarousel title="Shorts" items={shorts} moreLink="/shorts" />
+        <ShortCarousel
+          title={dictionary['Shorts']}
+          items={shorts}
+          moreLink="/shorts"
+        />
         <ChefCarouselSection
-          title="Nuestros chefs"
+          title={dictionary['Our chefs']}
           items={chefs}
           moreLink="/chefs"
         />
         <VideoCarousel
-          title="Video recetas"
+          title={dictionary['Video recipes']}
           items={videos}
-          moreLink="/contenido/videos"
+          moreLink="/content/videos"
         />
         <EditorialCarouselSection
-          title="Contenido editorial"
+          title={dictionary['Editorial content']}
           items={editorial}
-          moreLink="/contenido/editorial"
+          moreLink="/content/editorial"
         />
         <CarouselCategorySection
-          title="Otras recetas"
+          title={dictionary['Other recipes']}
           items={otherCategories}
-          moreLink="/recetas"
+          moreLink="/recipes"
         />
         <CarouselSection
-          title="Loco tips"
+          title={dictionary['Mad Tips']}
           items={locoTips}
-          moreLink="/loco-tips"
+          moreLink="/mad-tips"
         />
       </Container>
     </div>

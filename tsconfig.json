@@ -31,13 +31,12 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    ".next-claro-colombia/types/**/*.ts",
-    ".next-movistar-venezuela/types/**/*.ts",
+    ".next/types/**/*.ts",
+    ".next-temcel-mozambique/types/**/*.ts",
     ".next-test/types/**/*.ts",
     ".next/types/**/*.ts",
     "next-env.d.ts",
-    "video.d.ts",
-    ".next-personal-paraguay/types/**/*.ts"
+    "video.d.ts"
 , ".next/types/app/(root)/layout.tsx"  ],
   "exclude": [
     "node_modules"

@@ -6,6 +6,8 @@ import { ChevronRight } from 'lucide-react'
 import { FavoriteVideoSectionItem } from '@/components/favorites/FavoriteVideoSectionItem'
 import { SectionTitle } from '@/components/text/SectionTitle'
 
+import dictionary from '@/dictionary/lang.json'
+
 type FavoriteVideoSectionProps = {
   title?: string
   moreLink?: string
@@ -30,7 +32,8 @@ export const FavoriteVideoSection: React.FC<FavoriteVideoSectionProps> = ({
             href={moreLink}
             className="text-white text-xs  font-normal md:text-[16px] flex items-center"
           >
-            Ver más <ChevronRight size={20} className="ml-1" />
+            {dictionary['View more']}{' '}
+            <ChevronRight size={20} className="ml-1" />
           </Link>
         )}
       </div>
@@ -43,7 +46,7 @@ export const FavoriteVideoSection: React.FC<FavoriteVideoSectionProps> = ({
         </div>
       ) : (
         <div className="text-black text-center bg-[#666666] py-4 rounded-xl ">
-          No tienes contenido videos disponible
+          {dictionary["You don't have any content"]}
         </div>
       )}
     </div>

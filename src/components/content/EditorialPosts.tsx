@@ -8,6 +8,8 @@ import { Container } from '@/components/Container'
 import { SectionTitle } from '@/components/text/SectionTitle'
 import { Pagination } from '@/components/pagination/Pagination'
 
+import dictionary from '@/dictionary/lang.json'
+
 const Loading = dynamic(() => import('@/components/Loading'), {
   ssr: false,
 })
@@ -52,7 +54,7 @@ export const EditorialPosts: React.FC<Props> = ({ category, url = '' }) => {
         </div>
       ) : (
         <div className="w-full max-w-[400px] mx-auto text-black text-center bg-[#666666] py-4 rounded-xl ">
-          No tienes contenido disponible
+          {dictionary["You don't have any content"]}
         </div>
       )}
     </div>

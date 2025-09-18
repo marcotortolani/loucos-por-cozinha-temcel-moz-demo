@@ -7,6 +7,8 @@ import Link from 'next/link'
 import { Post } from '@/lib/api/wp/wp-types'
 import { RecipeVideoPosterItem } from '@/components/recipes/RecipeVideoPosterItem'
 
+import dictionary from '@/dictionary/lang.json'
+
 type RecipeVideoCarouselProps = {
   title?: string
   moreLink?: string
@@ -20,6 +22,8 @@ export const RecipeVideoCarousel: React.FC<RecipeVideoCarouselProps> = ({
   items = [],
   color = 'text-[#FFB626]',
 }) => {
+  if (items.length === 0) return null
+
   return (
     <div>
       <div className="flex items-center justify-between mb-2 md:mb-4">
@@ -30,7 +34,8 @@ export const RecipeVideoCarousel: React.FC<RecipeVideoCarouselProps> = ({
           href={moreLink}
           className="text-white text-xs  font-normal md:text-[16px] flex items-center"
         >
-          Ver más <ChevronRight size={20} className="ml-1" />
+          {dictionary['View more']}
+          <ChevronRight size={20} className="ml-1" />
         </Link>
       </div>
 
@@ -64,7 +69,7 @@ export const RecipeVideoCarousel: React.FC<RecipeVideoCarouselProps> = ({
           },
         }}
       >
-        {items.map((item, index) => (
+        {items?.map((item, index) => (
           <SwiperSlide key={index}>
             <RecipeVideoPosterItem item={item} />
           </SwiperSlide>

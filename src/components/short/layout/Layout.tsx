@@ -26,7 +26,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     },
     {
       title: 'Recetas',
-      href: '/recetas',
+      href: '/recipes',
     },
     {
       title: 'Nuestros Chefs',
@@ -34,15 +34,15 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     },
     {
       title: 'Contenido',
-      href: '/contenido',
+      href: '/content',
     },
     {
       title: 'Favoritos',
-      href: '/favoritos',
+      href: '/favorites',
     },
     {
       title: 'Suscribite',
-      href: '/suscribirme',
+      href: '/subscribe',
     },
   ]
 

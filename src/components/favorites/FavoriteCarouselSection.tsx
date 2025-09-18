@@ -8,6 +8,8 @@ import { Post } from '@/lib/api/wp/wp-types'
 import { FavoriteCarouselSectionItem } from '@/components/favorites/FavoriteCarouselSectionItem'
 import { SectionTitle } from '@/components/text/SectionTitle'
 
+import dictionary from '@/dictionary/lang.json'
+
 type FavoriteCarouselSectionProps = {
   title?: string
   moreLink?: string
@@ -29,7 +31,8 @@ export const FavoriteCarouselSection: React.FC<
             href={moreLink}
             className="text-white text-xs md:text-[16px]  font-normal flex items-center"
           >
-            Ver más <ChevronRight size={20} className="ml-1" />
+            {dictionary['View more']}{' '}
+            <ChevronRight size={20} className="ml-1" />
           </Link>
         )}
       </div>
@@ -73,7 +76,7 @@ export const FavoriteCarouselSection: React.FC<
         </Swiper>
       ) : (
         <div className="text-black text-center bg-[#666666] py-4 rounded-xl ">
-          No tienes contenido editorial disponible
+          {dictionary["You don't have any content"]}
         </div>
       )}
     </div>

@@ -8,6 +8,8 @@ import { Category } from '@/lib/api/wp/wp-types'
 import { useAdditionalComponentsStore } from '@/lib/modules/additional-components/additional-components-store'
 import Loading from '@/components/Loading'
 
+import dictionary from '@/dictionary/lang.json'
+
 export default function Page({
   params,
 }: {
@@ -52,7 +54,7 @@ export default function Page({
     return (
       <div className=" w-full h-[50dvh] flex items-center justify-center">
         <div className=" w-5/6 max-w-[400px] mx-auto h-20 bg-black/80 flex items-center justify-center rounded-xl">
-          <p className=" text-white">Contenido no encontrado</p>
+          <p className=" text-white">{dictionary['Content not found']}</p>
         </div>
       </div>
     )

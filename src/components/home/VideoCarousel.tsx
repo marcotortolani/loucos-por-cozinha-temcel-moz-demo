@@ -8,6 +8,8 @@ import { VideoPosterItem } from '@/components/video/VideoPosterItem'
 import { Post } from '@/lib/api/wp/wp-types'
 import { SectionTitle } from '@/components/text/SectionTitle'
 
+import dictionary from '@/dictionary/lang.json'
+
 type VideoCarouselProps = {
   title?: string
   moreLink?: string
@@ -29,7 +31,7 @@ export const VideoCarousel: React.FC<VideoCarouselProps> = ({
           href={moreLink}
           className="text-white text-xs md:text-[16px]  font-normal flex items-center"
         >
-          Ver más <ChevronRight size={20} className="ml-1" />
+          {dictionary['View more']} <ChevronRight size={20} className="ml-1" />
         </Link>
       </div>
 

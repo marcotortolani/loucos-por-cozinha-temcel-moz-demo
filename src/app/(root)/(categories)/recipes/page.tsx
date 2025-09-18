@@ -1,0 +1,26 @@
+import React from 'react'
+import { getWpCategories } from '@/lib/api/wp/wp-actions'
+import { RecipePostItem } from '@/components/recipes/RecipePostItem'
+import { Container } from '@/components/Container'
+import { SectionTitle } from '@/components/text/SectionTitle'
+import { notFound } from 'next/navigation'
+import { CATEGORIES } from '@/lib/constants'
+
+import dictionary from '@/dictionary/lang.json'
+
+export default async function Page() {
+  const categories = await getWpCategories({ parent: CATEGORIES.recipes })
+
+  if (!categories.length) notFound()
+
+  return (
+    <Container>
+      <SectionTitle>{dictionary['Recipes']}</SectionTitle>
+      <div className="grid grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
+        {categories.map((item, key) => (
+          <RecipePostItem category={item} key={key} />
+        ))}
+      </div>
+    </Container>
+  )
+}

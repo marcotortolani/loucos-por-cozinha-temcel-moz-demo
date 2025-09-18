@@ -6,6 +6,9 @@ import { VideoItem } from '@/components/video/VideoItem'
 import { SharedAndFavoriteVideoComponent } from '@/components/SharedAndFavoriteVideoComponent'
 import { VideoPostCarousel } from '@/components/video/VideoPostCarousel'
 import { Container } from '@/components/Container'
+import { CATEGORIES } from '@/lib/constants'
+
+import dictionary from '@/dictionary/lang.json'
 
 type PageProps = Promise<{ category: string; id: string }>
 
@@ -15,7 +18,7 @@ export default async function Page({ params }: { params: PageProps }) {
   const data = await getWpPosts({ slug: id })
 
   const [wpPost] = data.posts || []
-  const categories = await getWpCategories({ parent: 20 }) // categorias de recetas
+  const categories = await getWpCategories({ parent: CATEGORIES.recipes })
   const dataVideos = await getWpPosts({
     categories: categories.map((cat) => cat.id).join(','),
     exclude: wpPost.id?.toString(),
@@ -44,7 +47,7 @@ export default async function Page({ params }: { params: PageProps }) {
           className="text-white my-2 font-normal text-sm leading-[1.3rem] md:text-[1rem] md:leading-[1.45rem]"
         ></div>
         <VideoPostCarousel
-          title="También te podría interesar"
+          title={dictionary['You might also be interested in']}
           items={videos}
           color="text-white"
           moreLink={`/${category}`}

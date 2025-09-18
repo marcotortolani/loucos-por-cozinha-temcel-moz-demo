@@ -10,7 +10,7 @@ type RecipePostItemProps = {
 export const RecipePostItem: React.FC<RecipePostItemProps> = ({ category }) => {
   return (
     <div className="flex flex-col">
-      <Link href={`/recetas/${category.slug}`} prefetch>
+      <Link href={`/recipes/${category.slug}`} prefetch>
         <div className="relative mx-auto w-full h-[183px] md:h-[300px] lg:h-[350px] md:w-full aspect-square rounded-sm mb-2">
           <Image
             className={`rounded-sm`}
@@ -26,7 +26,7 @@ export const RecipePostItem: React.FC<RecipePostItemProps> = ({ category }) => {
           />
         </div>
       </Link>
-      <Link href={`/recetas/${category.slug}`} prefetch className="md:mt-1">
+      <Link href={`/recipes/${category.slug}`} prefetch className="md:mt-1">
         <div className="text-white text-[11.3px] leading-[24px] font-medium md:text-[18px] whitespace-pre-line text-left">
           {category.name}
         </div>

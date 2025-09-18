@@ -3,6 +3,8 @@ import { InstagramIcon } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 
+import dictionary from '@/dictionary/lang.json'
+
 export const MenuFooter = () => {
   const SOCIAL_ROUTES = [
     {
@@ -14,19 +16,21 @@ export const MenuFooter = () => {
 
   const ROUTES = [
     {
-      title: 'Términos y condiciones',
-      path: '/terminos-y-condiciones',
+      title: dictionary['Terms and Conditions'],
+      path: '/terms',
     },
     {
-      title: 'Suscribirme',
-      path: '/suscribirme',
+      title: dictionary['Subscribe'],
+      path: '/subscribe',
     },
   ]
 
   return (
     <div className="flex flex-col">
       <div className="flex border-b border-b-white pb-2">
-        <div className="text-white text-[16px] mr-2">Siguenos:</div>
+        <div className="text-white text-[16px] mr-2">
+          {dictionary['Follow us']}:
+        </div>
         {SOCIAL_ROUTES.map(({ Icon, href }, key) => (
           <Link
             href={href}
@@ -46,7 +50,9 @@ export const MenuFooter = () => {
           height={56}
           className="mb-1"
         />
-        <div className="text-xs text-white">Este es un sitio de Media Moob</div>
+        <div className="text-xs text-white">
+          {dictionary['This is a Media Moob site']}
+        </div>
       </div>
       <div className="flex">
         {ROUTES.map(({ title, path }) => (

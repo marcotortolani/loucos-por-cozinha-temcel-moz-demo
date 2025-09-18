@@ -1,6 +1,7 @@
 export type CategoryParams = {
   parent?: number | number[]
   slug?: string
+  id?: number
   name?: string
   description?: string
   include?: string
@@ -11,6 +12,7 @@ export type CategoryParams = {
 export type TagParams = {
   parent?: number | number[]
   slug?: string
+  id?: string
   name?: string
   description?: string
   include?: string

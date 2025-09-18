@@ -2,7 +2,8 @@
 import { InstagramIcon } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
-import React from 'react'
+
+import dictionary from '@/dictionary/lang.json'
 
 export const Footer = () => {
   const SOCIAL_ROUTES = [
@@ -15,12 +16,12 @@ export const Footer = () => {
 
   const ROUTES = [
     {
-      title: 'Términos y condiciones',
-      path: '/terminos-y-condiciones',
+      title: dictionary['Terms and Conditions'],
+      path: '/terms',
     },
     {
-      title: 'Suscribirme',
-      path: '/suscribirme',
+      title: dictionary['Subscribe'],
+      path: '/subscribe',
     },
   ]
 
@@ -32,7 +33,7 @@ export const Footer = () => {
             <div className="mr-4">
               <Image
                 src="/icons/logo.svg"
-                alt="logo-lxc"
+                alt={`Logo image - ${dictionary['Mad for Cooking']}`}
                 width={184}
                 height={56}
               />
@@ -57,7 +58,9 @@ export const Footer = () => {
               </Link>
             ))}
             <div className="flex justify-start">
-              <div className="text-white text-[16px] mr-2">Siguenos:</div>
+              <div className="text-white text-[16px] mr-2">
+                {dictionary['Follow us']}:
+              </div>
               {SOCIAL_ROUTES.map(({ Icon, href }, key) => (
                 <Link
                   href={href}

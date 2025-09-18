@@ -8,6 +8,8 @@ import { Category } from '@/lib/api/wp/wp-types'
 import { ChefCarouselSectionItem } from '@/components/home/ChefCarouselSectionItem'
 import { SectionTitle } from '@/components/text/SectionTitle'
 
+import dictionary from '@/dictionary/lang.json'
+
 type ChefCarouselSectionProps = {
   title?: string
   moreLink?: string
@@ -34,7 +36,7 @@ export const ChefCarouselSection: React.FC<ChefCarouselSectionProps> = ({
           href={moreLink}
           className="text-white text-xs md:text-[16px] font-normal flex items-center"
         >
-          Ver más <ChevronRight size={20} className="ml-1" />
+          {dictionary['View more']} <ChevronRight size={20} className="ml-1" />
         </Link>
       </div>
 
