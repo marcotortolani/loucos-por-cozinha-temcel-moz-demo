@@ -6,65 +6,64 @@ import {
   Title2Styled,
   ParagraphStyled,
 } from '@/components/terms/text-elements'
+import { getConfig } from '@/config'
 
 import dictionary from '@/dictionary/lang.json'
-
-import { getConfig } from '@/config'
 
 const operatorCountry = process.env.NEXT_PUBLIC_OPERATOR_COUNTRY || 'test'
 const { prodUrl: URL_SITE_PROD } = getConfig(operatorCountry)
 
 export default async function Page() {
   return (
-    <Container className="lg:max-w-screen-lg xl:max-w-screen-xl md:min-h-fit mt-4 md:mt-10 px-4 lg:px-20 py-[2rem] lg:py-14 bg-white rounded-lg">
+    <Container className="lg:max-w-screen-lg xl:max-w-screen-xl mt-10 px-4 lg:px-20 py-[2rem] lg:py-14 bg-white rounded-lg">
       <div className=" relative w-full flex flex-col items-center gap-8">
         <section className="w-full flex flex-col gap-4">
-          <TitleStyled>Terms and Conditions</TitleStyled>
+          <TitleStyled>Termos e Condições</TitleStyled>
           <ParagraphStyled>
-            This document establishes the terms and conditions that regulate the
-            use of the service called '{dictionary['Mad for Cooking']}'
-            (hereinafter the 'Service' or 'Entertainment Option') offered by
-            MOOB MEDIA BUSINESS, C.A (the 'Provider'), through which users of
-            Empresa Operadora S.A. - (hereinafter the 'Operator') may access
-            from their mobile device, Tablet, laptop or PC, content dedicated to
-            the culinary world, exclusive recipe videos, drinks, professional
-            chefs, cooking tips, editorial notes.
+            Este documento estabelece os termos e condições que regulam o uso do
+            serviço denominado {dictionary['Mad for Cooking']}
+            (doravante o Serviço ou Opção de Entretenimento) oferecido pela MOOB
+            MEDIA BUSINESS, C.A (o Fornecedor), através do qual os utilizadores
+            da Empresa Operadora S.A. - (doravante a Operadora) podem aceder a
+            partir do seu dispositivo móvel, Tablet, portátil ou PC, a conteúdo
+            dedicado ao mundo culinário, vídeos exclusivos de receitas, bebidas,
+            chefs profissionais, dicas de cozinha, notas editoriais.
           </ParagraphStyled>
         </section>
         <section className=" w-full flex flex-col gap-4">
           <Title2Styled>
-            THE SERVICE: {dictionary['Mad for Cooking']}
+            O SERVIÇO: {dictionary['Mad for Cooking']}
           </Title2Styled>
           <ParagraphStyled>
-            {dictionary['Mad for Cooking']} is an entertainment service that
-            allows the customer to access, through a cell phone, Tablet or
-            computer, content dedicated to the culinary world, exclusive recipe
-            videos, drinks, professional chefs, cooking tips, editorial notes,
-            under the conditions detailed in these Terms and Conditions.
+            {dictionary['Mad for Cooking']} é um serviço de entretenimento que
+            permite ao cliente aceder, através de um telemóvel, Tablet ou
+            computador, a conteúdo dedicado ao mundo culinário, vídeos
+            exclusivos de receitas, bebidas, chefs profissionais, dicas de
+            cozinha, notas editoriais, nas condições detalhadas nestes Termos e
+            Condições.
           </ParagraphStyled>
           <ParagraphStyled>
-            In this regard, all Operator customers who wish to do so may
-            subscribe by requesting their registration in the entertainment
-            option by sending an SMS with the command considered valid for such
-            action to number 111 (the message price is equivalent to one text
-            message per use).
+            Neste sentido, todos os clientes da Operadora que assim o desejem
+            podem subscrever solicitando o seu registo na opção de
+            entretenimento através do envio de um SMS com o comando considerado
+            válido para tal ação ao número 111 (o preço da mensagem é
+            equivalente a uma mensagem de texto por utilização).
           </ParagraphStyled>
           <ParagraphStyled>
-            By sending the word{' '}
+            Ao enviar a palavra{' '}
             <span className="font-bold">
-              SUBSCRIBE, or the command communicated for this action, to number
-              111
+              SUBSCREVER, ou o comando comunicado para esta ação, ao número 111
             </span>
-            , the customer will receive an SMS with the link and access
-            instructions to the portal, service price, billing frequency and a
-            pin to access the entertainment option. Once logged in, they can
-            enjoy unlimited access to all the content that{' '}
+            , o cliente receberá um SMS com o link e instruções de acesso ao
+            portal, preço do serviço, frequência de faturação e um pin para
+            aceder à opção de entretenimento. Uma vez autenticado, pode
+            desfrutar de acesso ilimitado a todo o conteúdo que o{' '}
             {dictionary['Mad for Cooking']}
-            offers. Navigation and data transmission charges are not included in
-            the service. Users can also subscribe through the Operator's
-            website, in the digital entertainment options section, selecting the
-            {dictionary['Mad for Cooking']} option, through the service's own
-            URL{' '}
+            oferece. Os custos de navegação e transmissão de dados não estão
+            incluídos no serviço. Os utilizadores também podem subscrever
+            através do website da Operadora, na secção de opções de
+            entretenimento digital, selecionando a opção{' '}
+            {dictionary['Mad for Cooking']}, através do URL próprio do serviço{' '}
             <Link
               className=" text-sky-600 "
               target="_blank"
@@ -72,142 +71,147 @@ export default async function Page() {
             >
               {URL_SITE_PROD}
             </Link>{' '}
-            or from any other section that the operator provides for this
-            purpose.
+            ou a partir de qualquer outra secção que a operadora disponibilize
+            para este fim.
           </ParagraphStyled>
           <ParagraphStyled>
-            The Service is provided through daily renewal subscription mode,
-            that is, continuously from the activation of the service by the
-            user, until the moment they wish to request service deactivation. To
-            unsubscribe, the user must send the word UNSUBSCRIBE to number 111
-            and will receive a confirmation message.
+            O Serviço é prestado através da modalidade de subscrição de
+            renovação diária, ou seja, de forma contínua desde a ativação do
+            serviço pelo utilizador, até ao momento em que este deseja solicitar
+            a desativação do serviço. Para cancelar a subscrição, o utilizador
+            deve enviar a palavra CANCELAR ao número 111 e receberá uma mensagem
+            de confirmação.
           </ParagraphStyled>
           <ParagraphStyled>
-            It is an essential requirement for using the subscription that the
-            user has SMS and mobile data or WiFi services activated, a
-            compatible and properly configured mobile phone. Users must verify
-            these aspects prior to requesting the service.
+            É um requisito essencial para utilizar a subscrição que o utilizador
+            tenha os serviços SMS e dados móveis ou WiFi ativados, um telemóvel
+            compatível e corretamente configurado. Os utilizadores devem
+            verificar estes aspetos antes de solicitar o serviço.
           </ParagraphStyled>
           <ParagraphStyled>
-            {dictionary['Mad for Cooking']} will send from number 111 a text
-            message with portal access information and pricing at least once a
-            month. Additionally, {dictionary['Mad for Cooking']} will send users
-            text messages with relevant information during periods when raffles,
-            awards and/or activities of interest to the segment are conducted.
+            {dictionary['Mad for Cooking']} enviará do número 111 uma mensagem
+            de texto com informação de acesso ao portal e preços pelo menos uma
+            vez por mês. Adicionalmente, {dictionary['Mad for Cooking']} enviará
+            aos utilizadores mensagens de texto com informação relevante durante
+            períodos em que sejam realizados sorteios, prémios e/ou atividades
+            de interesse para o segmento.
           </ParagraphStyled>
           <ParagraphStyled>
-            The use of the Service will be subject to acceptance and compliance
-            with these Terms and Conditions, which occurs from the moment the
-            customer subscribes to the service. All particular conditions,
-            notices or operating instructions that are made known to the user
-            through the Operator's or Provider's website in relation to the
-            Service will also apply.
-          </ParagraphStyled>
-        </section>
-        <section className=" w-full flex flex-col gap-4">
-          <Title2Styled>Service Scope</Title2Styled>
-          <ParagraphStyled>
-            The Service is available throughout the Operator's Country, for any
-            natural person capable of contracting, whose mobile phone line is
-            active at the time of requesting registration to the service.
-          </ParagraphStyled>
-          <ParagraphStyled>
-            The content will be available for viewing by the user from the
-            moment they successfully complete their registration. The content
-            can be viewed from any compatible terminal, requiring mobile data or
-            a WiFi connection for this purpose.
-          </ParagraphStyled>
-          <ParagraphStyled>
-            Any User who subscribes to the service and performs the necessary
-            authentication steps declares and guarantees full compliance with
-            these Terms and Conditions.
+            O uso do Serviço estará sujeito à aceitação e cumprimento destes
+            Termos e Condições, que ocorre desde o momento em que o cliente
+            subscreve o serviço. Também serão aplicáveis todas as condições
+            particulares, avisos ou instruções de funcionamento que sejam
+            comunicadas ao utilizador através do website da Operadora ou do
+            Fornecedor em relação ao Serviço.
           </ParagraphStyled>
         </section>
         <section className=" w-full flex flex-col gap-4">
-          <Title2Styled>Conditions of Use. Intellectual Property</Title2Styled>
+          <Title2Styled>Âmbito do Serviço</Title2Styled>
           <ParagraphStyled>
-            Users are obligated to make lawful use of the Service and the
-            content they access as a result of the Subscription, in accordance
-            with applicable current law and these Terms and Conditions. It is
-            the Users' responsibility to respect the mentioned regulations,
-            placing special emphasis on intellectual and industrial property
-            rights, and to refrain from using the Service for illicit purposes
-            or in a way that attacks or violates the rights of third parties or
-            the Provider. Users will be exclusively responsible for damages or
-            harm of any nature that may derive from incorrect, illegitimate or
-            illicit use of the Service.
+            O Serviço está disponível em todo o País da Operadora, para qualquer
+            pessoa singular capaz de contratar, cuja linha de telemóvel esteja
+            ativa no momento de solicitar o registo no serviço.
           </ParagraphStyled>
           <ParagraphStyled>
-            The Provider is the sole owner of the content, and/or has received a
-            license to use from the respective owners of said content. All
-            content that comprises the Subscription is protected by copyright
-            under current regulations. The content may be used by Users only to
-            the extent permitted by these Terms and Conditions and applicable
-            legislation.
+            O conteúdo estará disponível para visualização pelo utilizador a
+            partir do momento em que este complete com sucesso o seu registo. O
+            conteúdo pode ser visualizado a partir de qualquer terminal
+            compatível, requerendo dados móveis ou uma ligação WiFi para este
+            fim.
           </ParagraphStyled>
           <ParagraphStyled>
-            Unless expressly specified otherwise, content may not be downloaded
-            to users' devices.
+            Qualquer Utilizador que subscreva o serviço e execute os passos de
+            autenticação necessários declara e garante o cumprimento total
+            destes Termos e Condições.
           </ParagraphStyled>
         </section>
         <section className=" w-full flex flex-col gap-4">
-          <Title2Styled>Responsibility</Title2Styled>
+          <Title2Styled>Condições de Uso. Propriedade Intelectual</Title2Styled>
           <ParagraphStyled>
-            The responsibility and payment obligation for sending or receiving
-            text messages related to the Subscription will be the responsibility
-            of the holder of the mobile number used for such purpose, and cannot
-            be opposed due to{' '}
+            Os utilizadores são obrigados a fazer uso lícito do Serviço e do
+            conteúdo que acedem como resultado da Subscrição, de acordo com a
+            lei atual aplicável e estes Termos e Condições. É responsabilidade
+            dos Utilizadores respeitar os regulamentos mencionados, colocando
+            especial ênfase nos direitos de propriedade intelectual e
+            industrial, e abster-se de usar o Serviço para fins ilícitos ou de
+            forma que ataque ou viole os direitos de terceiros ou do Fornecedor.
+            Os Utilizadores serão exclusivamente responsáveis por danos ou
+            prejuízos de qualquer natureza que possam derivar do uso incorreto,
+            ilegítimo ou ilícito do Serviço.
+          </ParagraphStyled>
+          <ParagraphStyled>
+            O Fornecedor é o único proprietário do conteúdo, e/ou recebeu uma
+            licença de uso dos respetivos proprietários de dito conteúdo. Todo o
+            conteúdo que compreende a Subscrição está protegido por direitos de
+            autor sob os regulamentos atuais. O conteúdo pode ser usado pelos
+            Utilizadores apenas na medida permitida por estes Termos e Condições
+            e legislação aplicável.
+          </ParagraphStyled>
+          <ParagraphStyled>
+            A menos que seja expressamente especificado o contrário, o conteúdo
+            não pode ser descarregado para os dispositivos dos utilizadores.
+          </ParagraphStyled>
+        </section>
+        <section className=" w-full flex flex-col gap-4">
+          <Title2Styled>Responsabilidade</Title2Styled>
+          <ParagraphStyled>
+            A responsabilidade e obrigação de pagamento pelo envio ou receção de
+            mensagens de texto relacionadas com a Subscrição será da
+            responsabilidade do titular do número móvel usado para tal fim, e
+            não pode ser contestada devido a{' '}
             <span className=" font-semibold">
-              loss, theft, robbery, misplacement or damage of said mobile
-              equipment
+              perda, furto, roubo, extravio ou dano do dito equipamento móvel
             </span>
-            , except with prior report to any sending or receiving of these
-            messages, made to the Operator through the latter's service centers.
+            , exceto com denúncia prévia a qualquer envio ou receção destas
+            mensagens, feita à Operadora através dos centros de atendimento
+            desta última.
           </ParagraphStyled>
           <ParagraphStyled>
-            The Provider and the Operator cannot be considered responsible for
-            any damage or harm caused or that could be caused to Users or third
-            parties, in their persons or property, by contracting or using the
-            Service. They will not be responsible in case of dissatisfaction
-            with the service content either. For these cases, users will be free
-            to unsubscribe by sending the word{' '}
-            <span className=" font-semibold">UNSUBSCRIBE to number 111</span>.
+            O Fornecedor e a Operadora não podem ser considerados responsáveis
+            por qualquer dano ou prejuízo causado ou que possa ser causado aos
+            Utilizadores ou terceiros, nas suas pessoas ou propriedade, pela
+            contratação ou uso do Serviço. Também não serão responsáveis em caso
+            de insatisfação com o conteúdo do serviço. Para estes casos, os
+            utilizadores serão livres de cancelar a subscrição enviando a
+            palavra{' '}
+            <span className=" font-semibold">CANCELAR ao número 111</span>.
           </ParagraphStyled>
           <ParagraphStyled>
-            The Provider is not responsible for Subscriptions that do not
-            contain the requested data or that contain erroneous data, nor for
-            text messages that do not include the keywords established for
-            Service access. It will also not be responsible for requests or
-            submissions that are not accepted by the Provider's technological
-            platform, nor for delays that content visualizations, text messages
-            or any other submission related to the Subscription may suffer, for
-            any cause not attributable to the Provider, including but not
-            limited to network connectivity failures, excess or saturation of
-            network traffic, and/or any characteristics of mobile phones that
-            prevent the transmission of said submissions or requests.
+            O Fornecedor não é responsável pelas Subscrições que não contenham
+            os dados solicitados ou que contenham dados erróneos, nem pelas
+            mensagens de texto que não incluam as palavras-chave estabelecidas
+            para acesso ao Serviço. Também não será responsável por solicitações
+            ou submissões que não sejam aceites pela plataforma tecnológica do
+            Fornecedor, nem por atrasos que as visualizações de conteúdo,
+            mensagens de texto ou qualquer outra submissão relacionada com a
+            Subscrição possam sofrer, por qualquer causa não atribuível ao
+            Fornecedor, incluindo mas não limitado a falhas de conectividade de
+            rede, excesso ou saturação do tráfego de rede, e/ou quaisquer
+            características dos telemóveis que impeçam a transmissão de ditas
+            submissões ou solicitações.
           </ParagraphStyled>
           <ParagraphStyled>
-            The Provider reserves the right to make all types of modifications
-            to the Subscription mechanics without prior notice, with the sole
-            requirement of communicating any relevant changes on the website and
-            other media.
+            O Fornecedor reserva-se o direito de fazer todos os tipos de
+            modificações na mecânica da Subscrição sem aviso prévio, com o único
+            requisito de comunicar quaisquer mudanças relevantes no website e
+            outros meios de comunicação.
           </ParagraphStyled>
         </section>
         <section className=" w-full flex flex-col gap-4">
-          <Title2Styled>Jurisdiction</Title2Styled>
+          <Title2Styled>Jurisdição</Title2Styled>
           <ParagraphStyled>
-            Any relationship generated between Users and the Provider by virtue
-            of this Service will be governed and agreed upon in total subjection
-            to the laws of the Operator's Country, with Users waiving any other
-            law to whose application they might be entitled.
+            Qualquer relação gerada entre Utilizadores e o Fornecedor em virtude
+            deste Serviço será regida e acordada em total sujeição às leis do
+            País da Operadora, com os Utilizadores renunciando a qualquer outra
+            lei à qual possam ter direito de aplicação.
           </ParagraphStyled>
           <ParagraphStyled>
-            These Terms and Conditions are governed by the law of the Operator's
-            Country. For any controversy that may arise from the provision of
-            Services or the interpretation and application of the Terms and
-            Conditions, the Provider and Users agree to submit to the competent
-            courts of the Operator's Country with express waiver of any other
-            jurisdiction that might correspond to them.
+            Estes Termos e Condições são regidos pela lei do País da Operadora.
+            Para qualquer controvérsia que possa surgir da prestação de Serviços
+            ou da interpretação e aplicação dos Termos e Condições, o Fornecedor
+            e os Utilizadores concordam em submeter-se aos tribunais competentes
+            do País da Operadora com renúncia expressa a qualquer outra
+            jurisdição que lhes possa corresponder.
           </ParagraphStyled>
         </section>
       </div>
