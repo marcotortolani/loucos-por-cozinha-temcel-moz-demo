@@ -10,7 +10,7 @@ import { Container } from '@/components/Container'
 import { ShortCarousel } from '@/components/short/ShortCarousel'
 
 // import { AdditionalSection } from '@/components/home/AdditionalSection'
-import { BannerGame } from '@/components/home/BannerGame'
+// import { BannerGame } from '@/components/home/BannerGame'
 
 import dictionary from '@/dictionary/lang.json'
 
@@ -45,7 +45,7 @@ export default async function Page() {
 
       <Container>
         {/* <AdditionalSection /> */}
-        <BannerGame />
+        {/* <BannerGame /> */}
 
         <Recipes recipes={categories} />
         <ShortCarousel
