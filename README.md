@@ -40,6 +40,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - v1.6.1:
   Se elimina la dependencia html-to-text
   Se hace la traducción del sitio para portugues de Portugal e inglés
+  Se modifican imagenes del carrousel H1
+  Se actualiza el chatbot para portugues de Portugal
 
 - v1.6.0:
   Se agrega banner y formulario para inscripción a Loco Chef - Movistar/Venezuela y Test
