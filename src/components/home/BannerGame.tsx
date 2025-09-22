@@ -1,10 +1,9 @@
 'use client'
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useContext, useEffect, useState } from 'react'
 import { ValidationContext } from '@/providers/validation-provider'
 
-import Default from '/public/images/default.webp'
 import { useAdditionalComponentsStore } from '@/lib/modules/additional-components/additional-components-store'
 
 import bannerMobile from '/public/images/banner-trivia-lxc-mobile.webp'
