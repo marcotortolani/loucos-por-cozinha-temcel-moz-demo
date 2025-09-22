@@ -7,11 +7,10 @@ interface Config {
 
 export const buildConfigs: Record<string, Config> = {
   'temcel-mozambique': {
-    apiUrl: '',
+    apiUrl: 'http://content.mz.temcel.loucosporcozinha.moob.club/',
     prodUrl: '',
     landingSubscription: '/',
-    endpointAdditionalComponents:
-      'https://test.moob.club:8002/config-portales/lxc-test.json',
+    endpointAdditionalComponents: '',
   },
   test: {
     apiUrl: 'http://content.es.ve.movistar.locoporlacocina.moob.club/',
