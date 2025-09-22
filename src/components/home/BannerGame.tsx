@@ -18,7 +18,7 @@ export function BannerGame() {
   const router = useRouter()
   const { userEnabled, userID } = useContext(ValidationContext)
   const [userHash, setUserHash] = useState(null)
-  const [popupMessage, setPopupMessage] = useState<string | null>(null)
+  const [popupMessage, setPopupMessage] = useState(false)
   const [bannerEnabled, setBannerEnabled] = useState(false)
   const { additionalConfig } = useAdditionalComponentsStore()
   const { game } = additionalConfig
@@ -78,7 +78,7 @@ export function BannerGame() {
     }
     if (!userHash) {
       console.log('No userHash')
-      setPopupMessage(dictionary['Invalid user or subscription'])
+      setPopupMessage(true)
       return
     }
 
@@ -88,7 +88,7 @@ export function BannerGame() {
   useEffect(() => {
     if (popupMessage) {
       setTimeout(() => {
-        setPopupMessage(null)
+        setPopupMessage(false)
       }, 3000)
     }
   }, [popupMessage])
@@ -106,13 +106,17 @@ export function BannerGame() {
         >
           <Image
             className=" w-full h-full md:hidden rounded-xl"
-            src={bannerMobile}
+            src={game?.bannerMobile || bannerMobile}
             alt="Banner Mobile Trivia"
+            width={500}
+            height={630}
           />
           <Image
             className=" w-full h-full hidden md:block md:rounded-xl lg:rounded-3xl"
-            src={bannerDesktop}
+            src={game?.bannerDesktop || bannerDesktop}
             alt="Banner Desktop Trivia"
+            width={1200}
+            height={520}
           />
         </div>
       ) : (
@@ -120,18 +124,19 @@ export function BannerGame() {
           onClick={handleRedirect}
           className=" w-full h-fit px-0 md:px-0 hover:cursor-pointer "
         >
-          <ImageWithFallback
-            src={game?.bannerMobile}
-            fallbackImage={bannerMobile}
+          <Image
+            src={game?.bannerMobile || bannerMobile}
             alt="Banner Mobile Trivia"
-            className="w-full h-full md:hidden rounded-xl "
+            className="w-full h-full md:hidden rounded-xl"
+            width={500}
+            height={630}
           />
-
-          <ImageWithFallback
-            src={game?.bannerDesktop}
-            fallbackImage={bannerDesktop}
+          <Image
+            src={game?.bannerDesktop || bannerDesktop}
             alt="Banner Desktop Trivia"
-            className="w-full h-full hidden md:block md:rounded-xl lg:rounded-3xl object-cover"
+            className="w-full h-full hidden md:block md:rounded-xl lg:rounded-3xl"
+            width={1200}
+            height={520}
           />
         </div>
       )}
@@ -140,61 +145,10 @@ export function BannerGame() {
           popupMessage ? ' translate-y-0 ' : ' translate-y-[100%] '
         } absolute top-0 left-0 w-full h-full flex items-center justify-center transition-all duration-300 ease-in-out bg-black/40 backdrop-blur-sm pointer-events-none z-50`}
       >
-        <div className=" w-4/5 md:w-3/5 h-3/5 md:h-1/5 flex items-center justify-center uppercase font-normal text-White bg-Primary text-center rounded-xl">
-          {popupMessage}
+        <div className=" w-4/5 md:w-3/5 h-3/5 md:h-1/5 flex items-center justify-center uppercase font-normal text-white bg-primary text-center rounded-xl">
+          {dictionary['Invalid user or subscription']}
         </div>
       </div>
     </div>
-  )
-}
-
-const ImageWithFallback = ({
-  fallbackImage = Default,
-  src,
-  alt,
-  className,
-  ...props
-}: {
-  fallbackImage?: string | StaticImageData
-  src: string | StaticImageData
-  alt: string
-  className?: string
-}) => {
-  const [error, setError] = useState<boolean | null>(true)
-
-  useEffect(() => {
-    async function checkImage(url: string) {
-      try {
-        const response = await fetch(url, { method: 'HEAD' })
-        if (!response.ok) {
-          throw new Error('Image not accessible')
-        }
-
-        setError(false)
-      } catch (err) {
-        console.error('Banner Game Error: ', err)
-        setError(true)
-      }
-    }
-
-    checkImage(src.toString())
-  }, [src])
-
-  return (
-    <>
-      {!error ? (
-        <Image
-          {...props}
-          onError={() => setError(true)}
-          className={className}
-          src={fallbackImage}
-          alt={alt}
-        />
-      ) : (
-        <div className=" w-full h-fit ">
-          <Image {...props} className={className} src={src} alt={alt} />
-        </div>
-      )}
-    </>
   )
 }
