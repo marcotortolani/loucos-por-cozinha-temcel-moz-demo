@@ -17,7 +17,7 @@ export const buildConfigs: Record<string, Config> = {
     prodUrl: 'http://es.test.locoporlacocina.moob.club/',
     landingSubscription: '/',
     endpointAdditionalComponents:
-      'https://test.moob.club:8002/config-portales/lxc-test.json',
+      '',
   },
 }
 
