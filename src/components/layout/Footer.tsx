@@ -1,18 +1,18 @@
 'use client'
-import { InstagramIcon } from 'lucide-react'
+//import { InstagramIcon } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 
 import dictionary from '@/dictionary/lang.json'
 
 export const Footer = () => {
-  const SOCIAL_ROUTES = [
-    {
-      Icon: InstagramIcon,
-      title: 'Instagram',
-      href: 'https://www.instagram.com/locoxlacocina/',
-    },
-  ]
+  // const SOCIAL_ROUTES = [
+  //   {
+  //     Icon: InstagramIcon,
+  //     title: 'Instagram',
+  //     href: 'https://www.instagram.com/locoxlacocina/',
+  //   },
+  // ]
 
   const ROUTES = [
     {
@@ -57,7 +57,7 @@ export const Footer = () => {
                 {title}
               </Link>
             ))}
-            <div className="flex justify-start">
+            {/* <div className="flex justify-start">
               <div className="text-white text-[16px] mr-2">
                 {dictionary['Follow us']}:
               </div>
@@ -71,7 +71,7 @@ export const Footer = () => {
                   <Icon color="white" />
                 </Link>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

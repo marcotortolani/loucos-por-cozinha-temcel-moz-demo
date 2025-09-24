@@ -1,18 +1,18 @@
 'use client'
-import { InstagramIcon } from 'lucide-react'
+//import { InstagramIcon } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 
 import dictionary from '@/dictionary/lang.json'
 
 export const MenuFooter = () => {
-  const SOCIAL_ROUTES = [
-    {
-      Icon: InstagramIcon,
-      title: 'Instagram',
-      href: 'https://www.instagram.com/locoxlacocina/',
-    },
-  ]
+  // const SOCIAL_ROUTES = [
+  //   {
+  //     Icon: InstagramIcon,
+  //     title: 'Instagram',
+  //     href: 'https://www.instagram.com/locoxlacocina/',
+  //   },
+  // ]
 
   const ROUTES = [
     {
@@ -27,7 +27,7 @@ export const MenuFooter = () => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex border-b border-b-white pb-2">
+      {/* <div className="flex border-b border-b-white pb-2">
         <div className="text-white text-[16px] mr-2">
           {dictionary['Follow us']}:
         </div>
@@ -41,7 +41,7 @@ export const MenuFooter = () => {
             <Icon color="white" className="mr-2" />
           </Link>
         ))}
-      </div>
+      </div> */}
       <div className="my-4">
         <Image
           src={'/images/logo-mediamoob.webp'}
