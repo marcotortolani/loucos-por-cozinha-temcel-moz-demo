@@ -18,4 +18,7 @@ export const CATEGORIES = {
   'local-flavors': 39,
   shorts: 21,
   recipes: 20,
+  drinks: 41,
+  sweets: 33,
+  savory: 27,
 }

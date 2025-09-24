@@ -23,8 +23,6 @@ export function BannerGame() {
   const { game } = additionalConfig
   const validPeriod = game?.validPeriod
 
-  console.log(game.bannerMobile)
-
   useEffect(() => {
     if (IS_TEST) {
       setBannerEnabled(true)

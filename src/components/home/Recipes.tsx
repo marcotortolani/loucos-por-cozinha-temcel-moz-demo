@@ -16,7 +16,7 @@ export const Recipes: React.FC<RecipesProps> = ({ recipes = [] }) => {
       <SectionTitle color="text-[#FFB626]">
         {dictionary['Popular recipes']}
       </SectionTitle>
-      <div className="grid grid-cols-4 gap-3 md:gap-4">
+      <div className="  grid grid-cols-3 gap-3 md:gap-4">
         {recipes.map((recipe, key) => (
           <RecipePrincipalItem category={recipe} key={key} />
         ))}

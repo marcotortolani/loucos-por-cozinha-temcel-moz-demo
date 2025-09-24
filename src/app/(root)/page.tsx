@@ -5,9 +5,11 @@ import { CarouselSection } from '@/components/home/CarouselSection'
 import { getWpCategories, getWpPosts } from '@/lib/api/wp/wp-actions'
 import { ChefCarouselSection } from '@/components/home/ChefCarouselSection'
 import { EditorialCarouselSection } from '@/components/home/EditorialCarouselSection'
-import { CarouselCategorySection } from '@/components/home/CarouselCategorySection'
+// import { CarouselCategorySection } from '@/components/home/CarouselCategorySection'
 import { Container } from '@/components/Container'
 import { ShortCarousel } from '@/components/short/ShortCarousel'
+
+import { CATEGORIES } from '@/lib/constants'
 
 // import { AdditionalSection } from '@/components/home/AdditionalSection'
 import { BannerGame } from '@/components/home/BannerGame'
@@ -15,19 +17,26 @@ import { BannerGame } from '@/components/home/BannerGame'
 import dictionary from '@/dictionary/lang.json'
 
 export default async function Page() {
-  const chefs = await getWpCategories({ parent: 23, per_page: 50 })
-  const data = await getWpPosts({ categories: '22' })
-  const dataShorts = await getWpPosts({ categories: '21' })
-  const dataLocoTips = await getWpPosts({ categories: '315' })
+  const chefs = await getWpCategories({
+    parent: CATEGORIES.chefs,
+    per_page: 50,
+  })
+  const data = await getWpPosts({ categories: CATEGORIES.editorial.toString() })
+  const dataShorts = await getWpPosts({
+    categories: CATEGORIES.shorts.toString(),
+  })
+  const dataLocoTips = await getWpPosts({
+    categories: CATEGORIES['mad-tips'].toString(),
+  })
 
   const categories = await getWpCategories({
-    include: [27, 31, 30, 32].toString(),
-    per_page: 4,
+    parent: CATEGORIES.recipes,
+    per_page: 3,
   })
-  const otherCategories = await getWpCategories({
-    include: [41, 42, 40, 33].toString(),
-    per_page: 4,
-  })
+  // const otherCategories = await getWpCategories({
+  //   include: [41, 42, 40, 33].toString(),
+  //   per_page: 4,
+  // })
   const dataVideos = await getWpPosts({
     categories: categories?.map((cat) => cat.id).join(','),
   })
@@ -68,11 +77,11 @@ export default async function Page() {
           items={editorial}
           moreLink="/content/editorial"
         />
-        <CarouselCategorySection
+        {/* <CarouselCategorySection
           title={dictionary['Other recipes']}
           items={otherCategories}
           moreLink="/recipes"
-        />
+        /> */}
         <CarouselSection
           title={dictionary['Mad Tips']}
           items={locoTips}
