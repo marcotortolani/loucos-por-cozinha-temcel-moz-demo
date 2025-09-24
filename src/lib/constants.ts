@@ -15,7 +15,7 @@ export const CATEGORIES = {
   chefs: 23,
   editorial: 22,
   'mad-tips': 315,
-  'sabores-venezolanos': 39,
+  'local-flavors': 39,
   shorts: 21,
   recipes: 20,
   'bebidas-con-alcohol': 41,

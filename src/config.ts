@@ -13,8 +13,8 @@ export const buildConfigs: Record<string, Config> = {
     endpointAdditionalComponents: '',
   },
   test: {
-    apiUrl: 'http://content.es.ve.movistar.locoporlacocina.moob.club/',
-    prodUrl: 'http://es.test.locoporlacocina.moob.club/',
+    apiUrl: 'http://content.test.mz.temcel.loucosporcozinha.moob.club',
+    prodUrl: 'http://pt.test.loucosporcozinha.moob.club/',
     landingSubscription: '/',
     endpointAdditionalComponents:
       'https://test.moob.club:8002/config-portales/lxc-test.json',
