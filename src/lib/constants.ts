@@ -18,12 +18,4 @@ export const CATEGORIES = {
   'local-flavors': 39,
   shorts: 21,
   recipes: 20,
-  'bebidas-con-alcohol': 41,
-  'bebidas-sin-alcohol': 42,
-  'postres-y-dulces': 33,
-  'recetas-con-carne': 27,
-  'recetas-con-pescado': 31,
-  'recetas-con-pollo': 30,
-  'recetas-con-verduras': 32,
-  'recetas-de-pastas': 40,
 }

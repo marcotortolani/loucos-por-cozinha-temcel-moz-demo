@@ -23,6 +23,8 @@ export function BannerGame() {
   const { game } = additionalConfig
   const validPeriod = game?.validPeriod
 
+  console.log(game.bannerMobile)
+
   useEffect(() => {
     if (IS_TEST) {
       setBannerEnabled(true)
@@ -105,14 +107,14 @@ export function BannerGame() {
         >
           <Image
             className=" w-full h-full md:hidden rounded-xl"
-            src={game?.bannerMobile || bannerMobile}
+            src={bannerMobile}
             alt="Banner Mobile Trivia"
             width={500}
             height={630}
           />
           <Image
             className=" w-full h-full hidden md:block md:rounded-xl lg:rounded-3xl"
-            src={game?.bannerDesktop || bannerDesktop}
+            src={bannerDesktop}
             alt="Banner Desktop Trivia"
             width={1200}
             height={520}
