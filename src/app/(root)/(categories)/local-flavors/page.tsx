@@ -4,7 +4,7 @@ import dictionary from '@/dictionary/lang.json'
 
 export default async function Page() {
   const [category] = await getWpCategories({
-    slug: 'sabores-venezolanos',
+    slug: 'local-flavors',
   })
 
   if (!category)

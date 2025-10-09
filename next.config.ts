@@ -16,8 +16,6 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_LANDING_SUBSCRIPTION: config.landingSubscription ,
     NEXT_PUBLIC_ENDPOINT_ADDITIONAL_COMPONENTS: config.endpointAdditionalComponents,
     NEXT_PUBLIC_URL_CHATBOT: 'https://test.moob.club:8005/IA/mz/temcel/locoporlacocina/chat/index.php',
-    NEXT_PUBLIC_WEB3FORMS_URL: 'https://api.web3forms.com/submit',
-    NEXT_PUBLIC_WEB3FORMS_API_KEY: '78c750e5-3c34-4b18-8273-1aaf574dd707',
     ENDPOINT_VALIDATION_HASH: config.apiUrl + "wp-json/api/v1/validate_hash/",    
     ENDPOINT_CREATE_USER: "https://api.gaming.moob.club/api/v1/createuser",
   },

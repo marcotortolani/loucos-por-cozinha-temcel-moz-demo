@@ -11,8 +11,8 @@
   },
   "additionalSection": {
     "show": true,
-    "title": "Sabores Venezolanos",
-    "wp-category-slug": "sabores-venezolanos",
+    "title": "Sabores Locais",
+    "wp-category-slug": "local-flavors",
     "wp-category-id": 39
   },
   "validatorActive": false
