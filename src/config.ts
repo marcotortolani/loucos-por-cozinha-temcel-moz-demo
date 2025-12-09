@@ -9,7 +9,8 @@ export const buildConfigs: Record<string, Config> = {
   'temcel-mozambique': {
     apiUrl: 'http://content.mz.temcel.loucosporcozinha.moob.club/',
     prodUrl: 'http://mz.temcel.loucosporcozinha.club',
-    landingSubscription: '/',
+    landingSubscription:
+      'https://mz.wap.moob.club/landing/site/tmcel/loucoporcozinha/default1',
     endpointAdditionalComponents: '',
   },
   test: {

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description: '',
   icons: '/favicon.ico',
   other: {
-    version: '1.6.1',
+    version: '1.6.3',
   },
 }
 
