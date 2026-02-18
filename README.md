@@ -38,7 +38,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## Versiones
 
 - v1.6.3:
-  Se hace upgrade de Next por vulneravbilidad en versión de React
+  Se hace upgrade de Next por vulnerabilidad en versión de React
 
 - v1.6.2:
   Se agrega URL de landing de suscripción
