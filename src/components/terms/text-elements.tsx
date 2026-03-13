@@ -1,3 +1,5 @@
+// src/components/terms/text-elements.tsx
+
 import React from 'react'
 type ContentProps = {
   children?: React.ReactNode

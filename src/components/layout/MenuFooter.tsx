@@ -57,6 +57,11 @@ export const MenuFooter = () => {
       <div className="flex">
         {ROUTES.map(({ title, path }) => (
           <Link
+            id={
+              title === dictionary['Subscribe']
+                ? 'link-menu-footer-subscribe'
+                : ''
+            }
             href={path}
             className="mr-2 text-xs text-white underline"
             key={title}

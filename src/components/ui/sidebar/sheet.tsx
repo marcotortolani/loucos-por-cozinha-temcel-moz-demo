@@ -7,6 +7,7 @@ import { ChevronDown, X } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 import { ReactNode } from 'react'
+import dictionary from '@/dictionary/lang.json'
 
 import {
   Collapsible,
@@ -209,6 +210,11 @@ const SheetUI: React.FC<SheetUIProps> = ({
                           {internalRoutes.map((internalRoute, key) => (
                             <Link
                               href={internalRoute.href || '#'}
+                              id={
+                                title === dictionary['Subscribe']
+                                  ? 'link-sidebar-subscribe'
+                                  : ''
+                              }
                               key={key}
                               onClick={() =>
                                 onOpenChange && onOpenChange(false)

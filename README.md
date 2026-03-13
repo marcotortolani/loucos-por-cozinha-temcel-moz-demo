@@ -35,42 +35,34 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-## Versiones
+## Subscribe Buttons to manage with validator.js
 
-- v1.6.3:
-  Se hace upgrade de Next por vulnerabilidad en versión de React
+- Header -> id="link-header-subscribe"
+- Footer -> id="link-footer-subscribe"
+- Mobile Menu -> id="link-menu-footer-subscribe"
+- Sidebar Menu -> id="link-sidebar-subscribe"
+- Shorts Menu -> id="link-short-menu-subscribe"
+- Card -> id="link-subscribe-card"
 
-- v1.6.2:
-  Se agrega URL de landing de suscripción
+## Validator.js
 
-- v1.6.1:
-  Se elimina la dependencia html-to-text
-  Se hace la traducción del sitio para portugues de Portugal e inglés
-  Se modifican imagenes del carrousel H1
-  Se actualiza el chatbot para portugues de Portugal
+BUILD TIME (npm run build)
+│
+├── ¿Existe public/validador_base/validator.js?
+│ │
+│ ├── SÍ → validatorExists = true
+│ │ HTML generado incluye `<script src="/validator.js">`
+│ │
+│ └── NO → validatorExists = false
+│ HTML generado NO incluye el script
+│
+└── Archivos estáticos listos para deploy
 
-- v1.6.0:
-  Se agrega banner y formulario para inscripción a Loco Chef - Movistar/Venezuela y Test
+## Estructura del proyecto
 
-- v1.5.9:
-  Corrección request endpoint additional config con un provider
-
-- v1.5.7:
-  Se coloca banner de "Sabores Venezolanos" en el slider inicial
-  Se sube el slider de la categoría "Sabores Venezolanos" mas arriba
-  Se arregla la animación del slider inicial con Framer Motion
-
-- v1.5.6:
-  Chefs destacados, se pueden marcar en WP con un "featured" checked
-  Se ponen como orden de prioridad los chefs destacados, con un borde de color
-  Se habilita nuevamente Validator Provider y Trial Provider
-  Se agrega activacion/desactivacion de Validator y Trial en el endpoint de AdditionalConfig
-
-- v1.5.5:
-  Corrección en petición de Additional Config cuando falla el endpoint
-
-- v1.5.4:
-  Deshabilitación del Validator Provider y del Trial Provider
-
-- v1.5.3:
-  Correción falla en generación de cookies de validación
+tu-proyecto/
+├── app/
+│ └── layout.tsx
+├── public/
+│ └── validador_base/validator.js ← Si existe, se incluye. Si no, no.
+└── package.json

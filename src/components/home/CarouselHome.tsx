@@ -6,9 +6,6 @@ import { motion } from 'motion/react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 
-// import { useAdditionalComponentsStore } from '@/lib/modules/additional-components/additional-components-store'
-// import { getWpCategories } from '@/lib/api/wp/wp-actions'
-
 import dictionary from '@/dictionary/lang.json'
 
 const ITEMS = [
@@ -57,30 +54,7 @@ const ITEMS = [
 ]
 
 export const CarouselHome = () => {
-  // const { additionalConfig } = useAdditionalComponentsStore()
-  // const { additionalSection } = additionalConfig
   const [currentIndex, setCurrentIndex] = useState(0)
-  // const [sliderItems, setSliderItems] = useState(ITEMS)
-
-  // useEffect(() => {
-  //   if (!additionalSection?.show) return
-
-  //   getWpCategories({
-  //     include: additionalSection['wp-category-id'].toString(),
-  //   }).then((res) => {
-  //     if (res) {
-  //       const newItem = {
-  //         title: additionalSection?.title || '',
-  //         subtitle: res?.[0]?.description || dictionary['Special content'],
-  //         buttonText: dictionary['View content'],
-  //         image: res[0]?.image || '',
-  //         path: `/${additionalSection?.['wp-category-slug']}`,
-  //       }
-  //       setSliderItems([newItem, ...sliderItems])
-  //     }
-
-  //   })
-  // }, [additionalSection?.show])
 
   return (
     <Swiper

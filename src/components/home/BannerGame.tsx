@@ -1,10 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import { useContext, useEffect, useState } from 'react'
-import { ValidationContext } from '@/providers/validation-provider'
-
-import { useAdditionalComponentsStore } from '@/lib/modules/additional-components/additional-components-store'
+import { useEffect, useState } from 'react'
 
 import bannerMobile from '/public/images/banner-trivia-lxc-mobile.webp'
 import bannerDesktop from '/public/images/banner-trivia-lxc-desktop.webp'
@@ -15,13 +12,18 @@ import dictionary from '@/dictionary/lang.json'
 
 export function BannerGame() {
   const router = useRouter()
-  const { userEnabled, userID } = useContext(ValidationContext)
+
   const [userHash, setUserHash] = useState(null)
   const [popupMessage, setPopupMessage] = useState(false)
   const [bannerEnabled, setBannerEnabled] = useState(false)
-  const { additionalConfig } = useAdditionalComponentsStore()
-  const { game } = additionalConfig
-  const validPeriod = game?.validPeriod
+
+  const userEnabled = true
+  const userID = '1'
+
+  const validPeriod = {
+    startDate: '2023-08-01T00:00:00.000Z',
+    endDate: '2023-08-31T23:59:59.000Z',
+  }
 
   useEffect(() => {
     if (IS_TEST) {
@@ -68,7 +70,8 @@ export function BannerGame() {
   function handleRedirect() {
     if (typeof window === 'undefined') return
     if (IS_TEST) {
-      window.open(`${game?.url}&userhash=1`, '_blank')
+      // window.open(`${game?.url}&userhash=1`, '_blank')
+      window.open(`/`, '_self')
       return
     }
     if (!userEnabled) {
@@ -81,7 +84,7 @@ export function BannerGame() {
       return
     }
 
-    window.open(`${game?.url}&userhash=${userHash}`, '_blank')
+    // window.open(`${game?.url}&userhash=${userHash}`, '_blank')
   }
 
   useEffect(() => {
@@ -124,14 +127,14 @@ export function BannerGame() {
           className=" w-full h-fit px-0 md:px-0 hover:cursor-pointer "
         >
           <Image
-            src={game?.bannerMobile || bannerMobile}
+            src={bannerMobile}
             alt="Banner Mobile Trivia"
             className="w-full h-full md:hidden rounded-xl"
             width={500}
             height={630}
           />
           <Image
-            src={game?.bannerDesktop || bannerDesktop}
+            src={bannerDesktop}
             alt="Banner Desktop Trivia"
             className="w-full h-full hidden md:block md:rounded-xl lg:rounded-3xl"
             width={1200}

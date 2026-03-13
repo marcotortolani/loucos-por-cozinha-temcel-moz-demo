@@ -11,6 +11,8 @@ import {
 import Link from 'next/link'
 import { RouteItem } from '@/lib/route/route-types'
 
+import dictionary from '@/dictionary/lang.json'
+
 type ShortMenuProps = {
   routes: RouteItem[]
 }
@@ -35,8 +37,13 @@ export const ShortMenu: React.FC<ShortMenuProps> = ({ routes = [] }) => {
             {routes.map(({ title, href }, index) => (
               <NavigationMenuLink asChild key={index}>
                 <Link
+                  id={
+                    title === dictionary['Subscribe']
+                      ? 'link-short-menu-subscribe'
+                      : ''
+                  }
                   href={href || '#'}
-                  className={`${href === '/subscribe' ? ' bg-primary text-black hover:bg-primary/80 ' : ' text-white bg-black hover:text-black hover:bg-primary '} group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium `}
+                  className={`${title === dictionary['Subscribe'] ? ' bg-primary text-black hover:bg-primary/80 ' : ' text-white bg-black hover:text-black hover:bg-primary '} group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium `}
                   prefetch
                 >
                   {title}

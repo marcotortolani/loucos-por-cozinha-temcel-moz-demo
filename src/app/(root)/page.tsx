@@ -5,13 +5,12 @@ import { CarouselSection } from '@/components/home/CarouselSection'
 import { getWpCategories, getWpPosts } from '@/lib/api/wp/wp-actions'
 import { ChefCarouselSection } from '@/components/home/ChefCarouselSection'
 import { EditorialCarouselSection } from '@/components/home/EditorialCarouselSection'
-// import { CarouselCategorySection } from '@/components/home/CarouselCategorySection'
+
 import { Container } from '@/components/Container'
 import { ShortCarousel } from '@/components/short/ShortCarousel'
 
 import { CATEGORIES } from '@/lib/constants'
 
-// import { AdditionalSection } from '@/components/home/AdditionalSection'
 import { BannerGame } from '@/components/home/BannerGame'
 
 import dictionary from '@/dictionary/lang.json'
@@ -53,7 +52,6 @@ export default async function Page() {
       </div>
 
       <Container>
-        {/* <AdditionalSection /> */}
         <BannerGame />
 
         <Recipes recipes={categories} />

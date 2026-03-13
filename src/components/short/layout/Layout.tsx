@@ -7,7 +7,7 @@ import { Logo } from '@/components/layout/Logo'
 import { MenuFooter } from '@/components/layout/MenuFooter'
 import { useLayoutSidebarStore } from '@/components/layout/layout-store'
 import { RouteItem } from '@/lib/route/route-types'
-import { useAdditionalComponentsStore } from '@/lib/modules/additional-components/additional-components-store'
+import dictionary from '@/dictionary/lang.json'
 
 type LayoutProps = {
   children: React.ReactNode
@@ -16,42 +16,37 @@ type LayoutProps = {
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const pathname = usePathname()
   const { open, closeDialog } = useLayoutSidebarStore()
-  const { additionalConfig } = useAdditionalComponentsStore()
-  const { additionalSection } = additionalConfig
 
   const ROUTES: RouteItem[] = [
     {
-      title: 'Inicio',
+      title: dictionary['Home'],
       href: '/',
     },
     {
-      title: 'Recetas',
+      title: dictionary['Recipes'],
       href: '/recipes',
     },
     {
-      title: 'Nuestros Chefs',
+      title: dictionary['Our chefs'],
       href: '/chefs',
     },
     {
-      title: 'Contenido',
+      title: dictionary['Content'],
       href: '/content',
     },
     {
-      title: 'Favoritos',
+      title: dictionary['Mad Tips'],
+      href: '/mad-tips',
+    },
+    {
+      title: dictionary['Favorites'],
       href: '/favorites',
     },
     {
-      title: 'Suscribite',
+      title: dictionary['Subscribe'],
       href: '/subscribe',
     },
   ]
-
-  if (additionalSection && additionalSection?.show) {
-    ROUTES.splice(2, 0, {
-      title: additionalSection.title,
-      href: `/${additionalSection['wp-category-slug']}`,
-    })
-  }
 
   useEffect(() => {
     closeDialog()

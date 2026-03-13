@@ -14,7 +14,6 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_OPERATOR_COUNTRY: operatorCountry || "test",
     NEXT_PUBLIC_API_URL: config.apiUrl,
     NEXT_PUBLIC_LANDING_SUBSCRIPTION: config.landingSubscription ,
-    NEXT_PUBLIC_ENDPOINT_ADDITIONAL_COMPONENTS: config.endpointAdditionalComponents,
     NEXT_PUBLIC_URL_CHATBOT: 'https://test.moob.club:8005/IA/mz/temcel/locoporlacocina/chat/index.php',
     ENDPOINT_VALIDATION_HASH: config.apiUrl + "wp-json/api/v1/validate_hash/",    
     ENDPOINT_CREATE_USER: "https://api.gaming.moob.club/api/v1/createuser",

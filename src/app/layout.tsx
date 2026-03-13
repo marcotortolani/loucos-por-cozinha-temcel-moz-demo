@@ -5,11 +5,11 @@ import 'swiper/css/effect-fade'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import './globals.css'
-import { ValidationProvider } from '@/providers/validation-provider'
-import { AdditionalConfigProvider } from '@/providers/additional-config-provider'
+
 import { Toaster } from '@/components/ui/toaster'
 
 import dictionary from '../dictionary/lang.json'
+import { ValidatorLoader } from '@/components/ValidatorLoader'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description: '',
   icons: '/favicon.ico',
   other: {
-    version: '1.6.3',
+    version: '1.6.4',
   },
 }
 
@@ -34,9 +34,8 @@ export default async function RootLayout({
   return (
     <html lang={dictionary['lang']}>
       <body className={`${poppins.className} bg-[#252525]`}>
-        <AdditionalConfigProvider>
-          <ValidationProvider>{children}</ValidationProvider>
-        </AdditionalConfigProvider>
+        <ValidatorLoader />
+        {children}
         <Toaster />
       </body>
     </html>

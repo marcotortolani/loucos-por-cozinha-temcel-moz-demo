@@ -14,6 +14,7 @@ export default function Subscribe() {
       </p>
 
       <Link
+        id="link-subscribe-card"
         href={SUBSCRIBE_URL}
         target="_blank"
         className="uppercase inline-flex items-center justify-center rounded-[5px]  font-semibold text-[14px] h-10 py-[3px] px-[10px] bg-[#FFB626] text-black"

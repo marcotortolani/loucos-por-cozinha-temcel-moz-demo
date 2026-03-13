@@ -50,6 +50,11 @@ export const Footer = () => {
           <div className="flex items-center gap-8 ">
             {ROUTES.map(({ title, path }) => (
               <Link
+                id={
+                  title === dictionary['Subscribe']
+                    ? 'link-footer-subscribe'
+                    : ''
+                }
                 href={path}
                 className="text-[16px] text-white mr-auto text-nowrap"
                 key={title}
