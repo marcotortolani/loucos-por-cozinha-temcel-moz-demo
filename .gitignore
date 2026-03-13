@@ -48,5 +48,7 @@ videos/*
 public/_next-video
 
 
+/versiones
+/versions
 *.zip
 *.rar
