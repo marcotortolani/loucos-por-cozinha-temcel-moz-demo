@@ -11,7 +11,7 @@ import { ShortCarousel } from '@/components/short/ShortCarousel'
 
 import { CATEGORIES } from '@/lib/constants'
 
-import { BannerGame } from '@/components/home/BannerGame'
+// import { BannerGame } from '@/components/home/BannerGame'
 
 import dictionary from '@/dictionary/lang.json'
 
@@ -52,7 +52,7 @@ export default async function Page() {
       </div>
 
       <Container>
-        <BannerGame />
+        {/* <BannerGame /> */}
 
         <Recipes recipes={categories} />
         <ShortCarousel
