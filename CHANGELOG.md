@@ -1,5 +1,8 @@
 # Versiones
 
+- v1.6.5:
+  - Se agregan las páginas de /welcome y /cancel
+
 - v1.6.4:
   - Se agregan Terminos y Condiciones
   - Se elimina el AdditionalProvider, el endpoint y el config

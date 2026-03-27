@@ -14,7 +14,7 @@ import { ValidatorLoader } from '@/components/ValidatorLoader'
 const poppins = Poppins({
   subsets: ['latin'],
   preload: true,
-  weight: ['100', '200', '300', '400', '500'],
+  weight: ['100', '200', '300', '400', '500', '600', '700'],
 })
 
 export const metadata: Metadata = {
